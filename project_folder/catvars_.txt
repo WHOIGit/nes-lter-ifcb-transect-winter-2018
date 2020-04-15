@@ -1,0 +1,7 @@
+attribute	code	definition
+higherClassification_group	Bacillariophyceae	urn:lsid:marinespecies.org:taxname:148899
+higherClassification_group	Dinoflagellata	urn:lsid:marinespecies.org:taxname:146203
+higherClassification_group	Haptophyta	urn:lsid:marinespecies.org:taxname:369190
+higherClassification_group	other than diatoms, dinoflagellates, or haptophytes	taxon that can not be classified under any of the 3 listed higher level phytoplankton groups
+concentrationFlag	0	concentration may be invalid for this taxon when IFCB triggering only on chlorophyll fluorescence
+concentrationFlag	1	concentration likely valid for this taxon when IFCB triggering only on chlorophyll fluorescence

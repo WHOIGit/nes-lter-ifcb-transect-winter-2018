@@ -1,0 +1,4 @@
+permalink,data_provider_category_HumanObservation,scientificName_HumanObservation,scientificNameID_HumanObservation,higherClassification_group_manual,Abundance,Biovolume,volume_imaged,concentrationFlag,date,latitude,longitude,depth
+http://ifcb-data.whoi.edu/NESLTER_transect/D20180201T103729_IFCB102.html,Amphidinium,Amphidinium,urn:lsid:marinespecies.org:taxname:109473,Dinoflagellata,1,5495.193,3.991018854,1,2018-02-01 10:37:00+00:00,40.8413,-70.8868,5
+http://ifcb-data.whoi.edu/NESLTER_transect/D20180201T103729_IFCB102.html,Apedinella,Apedinella,urn:lsid:marinespecies.org:taxname:248096,"other than diatoms,dinoflagellates,or haptophytes",1,276.126,3.991018854,1,2018-02-01 10:37:00+00:00,40.8413,-70.8868,5
+http://ifcb-data.whoi.edu/NESLTER_transect/D20180201T103729_IFCB102.html,Bacillariophyceae,Bacillariophyceae,urn:lsid:marinespecies.org:taxname:148899,Bacillariophyceae,4,1806.066,3.991018854,1,2018-02-01 10:37:00+00:00,40.8413,-70.8868,5

@@ -1,0 +1,14 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+permalink	Unique URL identifier pointing to the landing page for the sample in an external repository. This is used to generate the eventID corresponding to Darwin Core term http://rs.tdwg.org/dwc/terms/eventID	character			NaN	Missing value
+data_provider_category_HumanObservation	Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name	character			NaN	Missing value
+scientificName_HumanObservation	Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord	character			NotApplicable	Several categories are not organisms thus taxonomic names are NotApplicable
+scientificNameID_HumanObservation	Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord	character			NotApplicable	Several categories are not organisms thus taxonomic names are NotApplicable
+higherClassification_group	Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification	character			NaN	Missing value
+Abundance	Count for all ROIs in a data provider category per sample. URI http://vocab.nerc.ac.uk/collection/P02/current/PATX/	numeric	dimensionless		NaN	Missing value
+Biovolume	Biovolume summed for all ROIs in a data provider category per sample	numeric	cubicMicrometers		NaN	Missing value
+volume_imaged	Volume of seawater for which images were collected per sample.	numeric	milliliter		NaN	Missing value
+concentrationFlag	concentration flag 1 valid 0 invalid for this taxon when IFCB triggering only on chlorophyll fluorescence	numeric	dimensionless		NaN	Missing value
+date	Date and time in UTC	Date		YYYY-MM-DD hh:mm:ss	NaN	Missing value
+latitude	Ship's latitude when sample was taken	numeric	degree		NaN	Missing value
+longitude	Ship's longitude when sample was taken	numeric	degree		NaN	Missing value
+depth	Depth of sample below sea surface. URI http://vocab.nerc.ac.uk/collection/P09/current/DEPH/	numeric	meter		NaN	Missing value

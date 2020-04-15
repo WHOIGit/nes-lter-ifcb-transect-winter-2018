@@ -1,0 +1,10 @@
+keyword	keywordThesaurus
+populations	LTER Core Research Areas
+phytoplankton	LTER Controlled Vocabulary
+abundance	LTER Controlled Vocabulary
+community composition	LTER Controlled Vocabulary
+imagery	LTER Controlled Vocabulary
+transects	LTER Controlled Vocabulary
+winter	LTER Controlled Vocabulary
+marine	LTER Controlled Vocabulary
+oceanography	LTER Controlled Vocabulary

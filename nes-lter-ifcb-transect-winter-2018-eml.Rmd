@@ -1,0 +1,139 @@
+---
+title: "NES-LTER IFCB Transect Winter 2018"
+author: "Stace Beaulieu"
+date: "15 April 2020"
+output: html_document
+---
+
+## R Markdown Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+
+# clear workspace for local development
+rm(list = ls())
+
+# set environment timezone to UTC
+Sys.setenv(TZ = "UTC")
+
+# assign relative path to directory
+dir <- "/Users/sbeaulieu/Desktop/github/WHOIGit/nes-lter-ifcb-transect-winter-2018/"
+# set as working directory
+setwd(dir)
+
+# define source for functions developed for the EDI packaging workflow
+source("edi-utilities.R")
+
+# install necessary libraries
+# install.packages("devtools")
+# install_github("EDIorg/EMLassemblyline")
+
+# define R packages to require
+libs <- c("tidyverse", "readxl", "lubridate", "devtools", "EMLassemblyline", "EML", "maps", "xml2")
+# load libraries
+lapply(libs, require, character.only = TRUE)
+```
+
+## Load data tables level1b and level2
+
+Ultimately we will add columns and revise column headers here
+This is not necessary for test csv files
+
+```{r}
+
+# note test csv files already have the columns and column headers for EDI product
+level1b <- read.csv("project_folder/level1b_test.csv")
+level2 <- read.csv("project_folder/level2_test.csv")
+
+```
+
+
+## QA: Map Sampling Locations
+
+Call the map_locs function from edi-utility.R to map the sampling locations. Perform a visual check.
+
+```{r}
+
+# Map Check
+# Note Package `maps` required for `map_data`
+
+# level 1b
+map_locs(df = level1b, xvar = "decimalLongitude", yvar = "decimalLatitude",
+         region = "transect", colorvar = NULL)
+
+# level 2
+map_locs(df = level2, xvar = "longitude", yvar = "latitude",
+         region = "transect", colorvar = NULL)
+
+```
+
+
+## EML Assembly: nes-lter-ifcb-transect-winter-2018
+
+This chunk outputs the final xml file for EDI through the following steps:
+
+Step 1: Populating EML Assembly Line templates with metadata
+Step 2: Calculating the geospatial and temporal coverage 
+Step 3: Making the XML file 
+Step 4: Inserting a custom NES-LTER parent project node 
+
+```{r}
+
+# define input for EML assembly
+metadata <- "IFCB-EN608-metadata"  # xlsx file
+project_folder <- "project_folder/"
+level1b_colhdr <- "level1b_colhdr" # metadata xlsx file
+level2_colhdr <- "level2_colhdr"   # metadata xlsx file
+edi_data <- c("level1b_test", "level2_test")  # data files
+file_descriptions <- c("Individual-level (Level 1b) file that provides a manual classification and size data for each imaged Region of Interest (ROI)", "Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file.")
+pkg_id <- "knb-lter-nes.7.1"
+
+# Make EML Templates
+# copy abstract, additional_info, and methods txt files into project_folder
+# or else this next step will produce empty files
+# Because this package will have two tables,
+# this first xlsx does not have attributes for either
+
+xlsx_to_template(metadata.path = paste0(dir, metadata),
+                 output.path = paste0(dir, project_folder),
+                 edi.filename = NULL, 
+                 rights = "CCBY")
+# level1b attributes needs separate xlxs
+xlsx_to_template(metadata.path = paste0(dir, project_folder, level1b_colhdr), 
+                 output.path = paste0(dir, project_folder),
+                 edi.filename = level1b_colhdr, 
+                 rights = "CCBY")
+# level2 attributes needs separate xlxs
+xlsx_to_template(metadata.path = paste0(dir, project_folder, level2_colhdr), 
+                 output.path = paste0(dir, project_folder),
+                 edi.filename = level2_colhdr, 
+                 rights = "CCBY")
+
+# Data Coverage
+# use level2
+# isolate date and geospatial columns for input
+date_col <- as.Date(level2$date)
+lat_col <- level2$latitude
+lon_col <- level2$longitude
+# run function to determine geospatial and temporal coverage
+coverage <- data_coverage(dates = date_col, lat = lat_col, lon = lon_col)
+
+# Make EML
+make_eml(path = paste0(dir, project_folder),
+         dataset.title = "Abundance and biovolume of taxonomically-resolved phytoplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018",
+         data.table = paste0(edi_data, ".csv"),
+         data.table.description = file_descriptions,
+         temporal.coverage = c(coverage$startdate, coverage$enddate),
+         geographic.description = "NES-LTER Transect",
+         geographic.coordinates = c(coverage$North, coverage$East, coverage$South, coverage$West),
+         maintenance.description = "completed",
+         user.id = "NES",
+         user.domain = "LTER",
+         package.id = pkg_id)
+
+# Insert Custom Project Node
+project_insert(edi_pkg = pkg_id, 
+               xml.path = paste0(dir, project_folder))
+```
+
+## Manually check a couple of ROIs in the data product against the IFCB Dashboard

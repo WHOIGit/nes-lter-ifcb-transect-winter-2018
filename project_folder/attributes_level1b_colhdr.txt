@@ -1,0 +1,18 @@
+attributeName	attributeDefinition	class	unit	dateTimeFormatString	missingValueCode	missingValueCodeExplanation
+permalink	Unique URL identifier pointing to the landing page for the ROI in an external repository. This is used to generate the eventID and occurrenceID	character			NaN	Missing value
+data_provider_category_HumanObservation	Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name	character			NaN	Missing value
+scientificName_HumanObservation	Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord	character			NotApplicable	Several categories are not organisms thus taxonomic names are NotApplicable
+scientificNameID_HumanObservation	Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord	character			NotApplicable	Several categories are not organisms thus taxonomic names are NotApplicable
+higherClassification_group	Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification	character			NaN	Missing value
+Area	Cross-sectional area of the ROI determined by means specified in the image processing method	numeric	squareMicrometers		NaN	Missing value
+Biovolume	Biovolume for the ROI determined by means specified in the biovolume calculation method	numeric	cubicMicrometers		NaN	Missing value
+maxFeretDiameter	Representation of length of the ROI, approximating the largest mesh size for which the organism could be retained, determined by means specified in the image processing method	numeric	micrometer		NaN	Missing value
+minFeretDiameter	Representation of width of the ROI, approximating the smallest mesh size through which the ROI could pass, determined by means specified in the image processing method	numeric	micrometer		NaN	Missing value
+eventDate	Date and time in UTC	Date		YYYY-MM-DD hh:mm:ss	NaN	Missing value
+decimalLatitude	Ship's latitude when sample was taken	numeric	degree		NaN	Missing value
+decimalLongitude	Ship's longitude when sample was taken	numeric	degree		NaN	Missing value
+depth	Depth of sample below sea surface. URI http://vocab.nerc.ac.uk/collection/P09/current/DEPH/	numeric	meter		NaN	Missing value
+eventID	Darwin Core unique identifier for the sample as an Event (http://rs.tdwg.org/dwc/terms/eventID)	character			NaN	Missing value
+occurrenceID	Darwin Core unique identifier for the ROI as an Occurrence (http://rs.tdwg.org/dwc/terms/occurrenceID)	character			NaN	Missing value
+occurrenceStatus	Darwin Core presence or absence of a Taxon at a Location (http://rs.tdwg.org/dwc/terms/occurrenceStatus)	character			NaN	Missing value
+basisOfRecord	Darwin Core HumanObservation or MachineObservation (http://rs.tdwg.org/dwc/terms/basisOfRecord)	character			NaN	Missing value
