@@ -7,7 +7,7 @@ higherClassification_group_manual	Higher level phytoplankton group that contains
 Abundance	Count for all ROIs in a data provider category per sample. URI http://vocab.nerc.ac.uk/collection/P02/current/PATX/	numeric	dimensionless		NaN	Missing value
 Biovolume	Biovolume summed for all ROIs in a data provider category per sample	numeric	cubicMicrometers		NaN	Missing value
 volume_imaged	Volume of seawater for which images were collected per sample.	numeric	milliliter		NaN	Missing value
-concentrationFlag	concentration flag 1 valid 0 invalid for this taxon when IFCB triggering only on chlorophyll fluorescence	numeric	dimensionless		NaN	Missing value
+concentrationFlag	flag 0 concentration may be invalid or 1 concentration likely valid for this taxon when IFCB triggering only on chlorophyll fluorescence	numeric	dimensionless		NaN	Missing value
 date	Date and time in UTC	Date		YYYY-MM-DD hh:mm:ss	NaN	Missing value
 latitude	Ship's latitude when sample was taken	numeric	degree		NaN	Missing value
 longitude	Ship's longitude when sample was taken	numeric	degree		NaN	Missing value

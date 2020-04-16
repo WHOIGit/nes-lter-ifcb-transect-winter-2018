@@ -206,10 +206,6 @@
     micrometers, with quantitative observations in a more narrow range.
     Images have resolution 2.77 pixels per micrometer.
   </para>
-            <para>
-    threshold not just scattering, Sosik lab sensitivity high bc looking
-    for nano
-  </para>
           </section>
           <section>
             <title>Determining volume imaged per sample</title>
@@ -244,20 +240,22 @@
             <para>
     Identifications to morphological categories were done manually using
     annotation software with a database that also records the annotators
-    and the number of times an annotation has been verified.
-    Identifications are assigned per ROI, corresponding to an
-    occurrence. We queried the database to export manual annotations for
-    the geographic subset of IFCB102 samples and then further subsetted
-    to include only those samples for which every ROI in the sample was
-    verified by a high power annotator [- or - for which we have high
-    confidence in the manual classifications - or - to reduce
-    uncertainty]. Most of the morphological category names could be
-    resolved to accepted taxonomic names and machine-readable
-    identifiers in the World Register of Marine Species (WoRMS). [The
-    level of taxonomic identification varies, but some distinctive taxa
-    can be identified to species level.] Some morphological categories
-    could only be matched to WoRMS at a higher taxonomic level, for
-    example mix_elongated is a morphological category of diatoms. Some
+    and the number of times an annotation has been verified. We queried
+    the database to export manual annotations for the geographic subset
+    of IFCB102 samples and then further subsetted to include only those
+    samples for which every ROI in the sample was verified by a high
+    power annotator [- or - for which we have high confidence in the
+    manual classifications - or - to reduce uncertainty]. In this
+    version of this data product, each ROI corresponds to an occurrence
+    of a single taxon (in future versions we may account for categories
+    or tags for a small number of ROIs that represent multiple taxa).
+    Most of the morphological category names could be resolved to
+    accepted taxonomic names and machine-readable identifiers in the
+    World Register of Marine Species (WoRMS). The level of taxonomic
+    identification varies, but some distinctive taxa can be identified
+    to species level. Some morphological categories could only be
+    matched to WoRMS at a higher taxonomic level, for example
+    mix_elongated is a morphological category of diatoms. Some
     morphological categories could not be matched to WoRMS, but were
     matched to Eukaryota in AlgaeBase. We also resolved taxonomic names
     and identifiers for the full list of categories in the annotation
@@ -304,10 +302,10 @@
     match 1:1 to cell counts because chain- or colony-forming organisms
     may be imaged as a single ROI. Note concentrations will be
     underestimates for those taxa that do not always trigger
-    fluorescence (e.g., heterotrophs). [For the data product from this
-    cruise, we provide a concentration flag for categories undersampled
-    when triggering only on chlorophyll fluorescence as reported by
-    Brownlee et al. (2016) https://doi.org/10.3354/meps11687.]
+    fluorescence (e.g., heterotrophs). We provide a concentration flag
+    for categories undersampled when triggering only on chlorophyll
+    fluorescence as reported by Brownlee et al. (2016)
+    https://doi.org/10.3354/meps11687.
   </para>
           </section>
           <section>
@@ -972,7 +970,7 @@
         </attribute>
         <attribute>
           <attributeName>concentrationFlag</attributeName>
-          <attributeDefinition>concentration flag 1 valid 0 invalid for this taxon when IFCB triggering only on chlorophyll fluorescence</attributeDefinition>
+          <attributeDefinition>flag 0 concentration may be invalid or 1 concentration likely valid for this taxon when IFCB triggering only on chlorophyll fluorescence</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
