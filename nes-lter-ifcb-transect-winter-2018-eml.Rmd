@@ -42,8 +42,8 @@ This is not necessary for test csv files
 ```{r}
 
 # note test csv files already have the columns and column headers for EDI product
-level1b <- read.csv("project_folder/level1b_test.csv")
-level2 <- read.csv("project_folder/level2_test.csv")
+level1b <- read_csv("project_folder/level1b_test.csv")
+level2 <- read_csv("project_folder/level2_test.csv")
 
 ```
 
@@ -82,11 +82,11 @@ Step 4: Inserting a custom NES-LTER parent project node
 # define input for EML assembly
 metadata <- "IFCB-EN608-metadata"  # xlsx file
 project_folder <- "project_folder/"
-level1b_colhdr <- "level1b_colhdr" # metadata xlsx file
-level2_colhdr <- "level2_colhdr"   # metadata xlsx file
+level1b_test <- "level1b_test" # metadata xlsx file
+level2_test <- "level2_test"   # metadata xlsx file
 edi_data <- c("level1b_test", "level2_test")  # data files
-file_descriptions <- c("Individual-level (Level 1b) file that provides a manual classification and size data for each imaged Region of Interest (ROI)", "Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file.")
-pkg_id <- "knb-lter-nes.7.1"
+file_descriptions <- c("Individual-level (Level 1b) file that provides classification and size for each imaged Region of Interest (ROI)", "Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file")
+pkg_id <- "knb-lter-nes.9.1"
 
 # Make EML Templates
 # copy abstract, additional_info, and methods txt files into project_folder
@@ -99,14 +99,16 @@ xlsx_to_template(metadata.path = paste0(dir, metadata),
                  edi.filename = NULL, 
                  rights = "CCBY")
 # level1b attributes needs separate xlxs
-xlsx_to_template(metadata.path = paste0(dir, project_folder, level1b_colhdr), 
+# figure out how to rename this so not to be confused with data file
+xlsx_to_template(metadata.path = paste0(dir, level1b_test), 
                  output.path = paste0(dir, project_folder),
-                 edi.filename = level1b_colhdr, 
+                 edi.filename = level1b_test, 
                  rights = "CCBY")
 # level2 attributes needs separate xlxs
-xlsx_to_template(metadata.path = paste0(dir, project_folder, level2_colhdr), 
+# figure out how to rename this so not to be confused with data file
+xlsx_to_template(metadata.path = paste0(dir, level2_test), 
                  output.path = paste0(dir, project_folder),
-                 edi.filename = level2_colhdr, 
+                 edi.filename = level2_test, 
                  rights = "CCBY")
 
 # Data Coverage

@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.9.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.2.0  https://nis.lternet.edu/schemas/EML/eml-2.2.0/xsd/eml.xsd" system="edi">
+  <dataset>
+    <title>Abundance and biovolume of taxonomically-resolved phytoplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</title>
+    <creator>
+      <individualName>
+        <givenName>Heidi</givenName>
+        <givenName>M</givenName>
+        <surName>Sosik</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>hsosik@whoi.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-4591-2842</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Emily</givenName>
+        <surName>Peacock</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>epeacock@whoi.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Miraflor</givenName>
+        <surName>Santos</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>miras@mit.edu</electronicMailAddress>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Katherine</givenName>
+        <surName>Qi</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>klqi@ucsd.edu</electronicMailAddress>
+      <role>Metadataprovider</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Stace</givenName>
+        <givenName>E</givenName>
+        <surName>Beaulieu</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>sbeaulieu@whoi.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
+      <role>Metadataprovider</role>
+    </associatedParty>
+    <pubDate>2020-04-16</pubDate>
+    <abstract>
+      <para>
+  These data represent the abundance and biovolume of
+  taxonomically-resolved phytoplankton imaged continuously underway
+  along the NES-LTER Transect during the winter 2018 cruise EN608.
+  Images were obtained with an Imaging FlowCytobot (IFCB) sampling at
+  approximately 20-min intervals from seawater supplied from 5 meters
+  water depth. Data are provided for the subset of images during the
+  cruise that were on the north-south transect along longitude 70 53’ W.
+  Sizes for individuals were determined automatically by image
+  processing, while identifications to morphological categories were
+  done manually. Data are provided by taxon with names and
+  machine-readable identifiers matched to the lowest taxonomic level to
+  the World Register of Marine Species. Two data tables are provided:
+  the level 1b for each occurrence and the level 2 that summarizes the
+  occurrences by taxon per sample. Individual and sample identifiers are
+  linked to images served by an external repository. This data package
+  provides 144,281 machine-readable occurences for incorporation into
+  the Ocean Biogeographic Information System and the Global Ocean
+  Observing System Essential Ocean Variable Phytoplankton biomass and
+  diversity.
+</para>
+    </abstract>
+    <keywordSet>
+      <keyword>populations</keyword>
+      <keywordThesaurus>LTER Core Research Areas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>phytoplankton</keyword>
+      <keyword>abundance</keyword>
+      <keyword>community composition</keyword>
+      <keyword>imagery</keyword>
+      <keyword>transects</keyword>
+      <keyword>winter</keyword>
+      <keyword>marine</keyword>
+      <keyword>oceanography</keyword>
+      <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>
+  This information is released under the Creative Commons license -
+  Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/).
+  The consumer of these data ("Data User" herein) is required
+  to cite it appropriately in any publication that results from its use.
+  The Data User should realize that these data may be actively used by
+  others for ongoing research and that coordination may be necessary to
+  prevent duplicate publication. The Data User is urged to contact the
+  authors of these data if any questions about methodology or results
+  occur. Where appropriate, the Data User is encouraged to consider
+  collaboration or co-authorship with the authors. The Data User should
+  realize that misinterpretation of data may occur if used out of
+  context of the original study. While substantial efforts are made to
+  ensure the accuracy of data and associated documentation, complete
+  accuracy of data sets cannot be guaranteed. All data are made
+  available "as is." The Data User should be aware, however,
+  that data are updated periodically and it is the responsibility of the
+  Data User to check for new versions of the data. The data authors and
+  the repository where these data were obtained shall not be liable for
+  damages resulting from any use or misinterpretation of the data. Thank
+  you.
+</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>NES-LTER Transect</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.8868</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.8868</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.8413</northBoundingCoordinate>
+          <southBoundingCoordinate>40.8413</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2018-02-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2018-02-01</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>completed</description>
+    </maintenance>
+    <contact>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <positionName>Nes-Lter Information Manager</positionName>
+      <electronicMailAddress>lter-nes-info@whoi.edu</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <section>
+            <title>Underway science seawater supplied to the imaging
+  instrument</title>
+            <para>
+    Underway science seawater was supplied from 5-m water depth
+    continuously during R/V Endeavor cruise EN608 using a diaphragm pump
+    (gentler than an impeller pump for fragile cells). An Imaging
+    FlowCytobot (IFCB) sampled at approximately 20-min intervals from a
+    1 liter overflow bottle secured in a sink. The samples were
+    pre-filtered at the intake using 150 micrometer nitex mesh to avoid
+    aspirating overly large particles that might clog the system.
+    Normally, the same IFCB unit samples from the underway for the
+    entire cruise; however, we replaced the first IFCB (IFCB109) on the
+    second day of the cruise due to a fraction of cells not being
+    imaged.
+  </para>
+          </section>
+          <section>
+            <title>Determining the subset of samples along the NES-LTER
+  Transect</title>
+            <para>
+    [WORKFLOW transect_geocheck.py]
+  </para>
+            <para>
+    All underway samples from this cruise may be explored in the online
+    IFCB dashboard at:
+    https://ifcb-data.whoi.edu/timeline?bin=D20180205T132051_IFCB102&amp;dataset=NESLTER_transect&amp;tags=underway&amp;cruise=EN608.
+    Locations were determined for the IFCB samples based on matching the
+    sample start time rounded down to the nearest minute to the ship
+    position. We provide data for the subset of samples collected within
+    1 km east or west of the NES-LTER Transect longitude 70 deg 53 min
+    W, with code available in GitHub:
+    https://github.com/klqi/EDI-NES-LTER-2019/tree/master/geographic_query.
+  </para>
+          </section>
+          <section>
+            <title>Further subsetting samples for quality assurance</title>
+            <para>
+    We excluded samples taken at the beginning of the cruise with
+    IFCB109 because an estimated 5-10% of cells were outside the field
+    of view of its camera (there was evidence from the data that
+    degassing was occurring due to the extreme temperature difference
+    between the water sampled and the internal temperature of the IFCB).
+    For the second IFCB (IFCB102) we confirmed there were no samples
+    tagged bad_flow and checked the region of interest (ROI) x y plot in
+    the IFCB dashboard at several time points. During the beginning of
+    the cruise, IFCB102 was being used to check discrete samples from
+    the underway science seawater, as a backup to the IFCB109.
+    Ultimately, we also included 4 IFCB102 samples tagged underway and
+    discrete to account for some of the excluded IFCB109 samples early
+    in the cruise.
+  </para>
+          </section>
+          <section>
+            <title>Instrument settings that affect types and sizes of particles
+  imaged</title>
+            <para>
+    Images in this dataset were triggered by chlorophyll fluorescence,
+    thus mainly representing phytoplankton. IFCB trigger thresholds were
+    set to image as wide a size range as possible, i.e., 5 to 150
+    micrometers, with quantitative observations in a more narrow range.
+    Images have resolution 2.77 pixels per micrometer.
+  </para>
+            <para>
+    threshold not just scattering, Sosik lab sensitivity high bc looking
+    for nano
+  </para>
+          </section>
+          <section>
+            <title>Determining volume imaged per sample</title>
+            <para>
+    [WORKFLOW get_volume.py]
+  </para>
+            <para>
+    The IFCB draws in 5 ml per sample but does not image the entire
+    volume. The volume imaged per sample was determined using code
+    available in GitHub: https://github.com/joefutrelle/pyifcb and
+    https://github.com/klqi/EDI-NES-LTER-2019/tree/master/volume.
+  </para>
+          </section>
+          <section>
+            <title>Image processing method and version</title>
+            <para>
+    Images were processed with software for segmentation and feature
+    extraction to determine size parameters per ROI (IFCB Features
+    Version 4). Results from image processing are provided in the IFCB
+    dashboard per sample as a features_v4.csv file. We selected a subset
+    of 4 features to provide per ROI (Area, Biovolume, maxFeretDiameter,
+    minFeretDiameter). The biovolume calculation method is described by
+    Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278.
+  </para>
+          </section>
+          <section>
+            <title>Manual annotation and classification</title>
+            <para>
+    [WORKFLOW classification WoRMS_verify.Rmd and
+    WoRMS_verify_cleaning.R]
+  </para>
+            <para>
+    Identifications to morphological categories were done manually using
+    annotation software with a database that also records the annotators
+    and the number of times an annotation has been verified.
+    Identifications are assigned per ROI, corresponding to an
+    occurrence. We queried the database to export manual annotations for
+    the geographic subset of IFCB102 samples and then further subsetted
+    to include only those samples for which every ROI in the sample was
+    verified by a high power annotator [- or - for which we have high
+    confidence in the manual classifications - or - to reduce
+    uncertainty]. Most of the morphological category names could be
+    resolved to accepted taxonomic names and machine-readable
+    identifiers in the World Register of Marine Species (WoRMS). [The
+    level of taxonomic identification varies, but some distinctive taxa
+    can be identified to species level.] Some morphological categories
+    could only be matched to WoRMS at a higher taxonomic level, for
+    example mix_elongated is a morphological category of diatoms. Some
+    morphological categories could not be matched to WoRMS, but were
+    matched to Eukaryota in AlgaeBase. We also resolved taxonomic names
+    and identifiers for the full list of categories in the annotation
+    database, to be able to provide occurrenceStatus absent for those
+    categories not observed in samples from this cruise. For the data
+    product from this cruise, we also provide a higher classification
+    group for each organism - diatoms, dinoflagellates, haptophytes, or
+    other than those 3 - to enable summarization for functional groups.
+    Several categories are not organisms thus taxonomic names are
+    NotApplicable (e.g., bubble, detritus). Code and classification
+    lookup tables are available in GitHub:
+    https://github.com/klqi/EDI-NES-LTER-2019/tree/master/namespace_validation.
+  </para>
+          </section>
+          <section>
+            <title>Joining the features and taxonomic classification per
+  ROI</title>
+            <para>
+    [WORKFLOW auto_extract.py]
+  </para>
+            <para>
+    Code that joins the image URL and features from the IFCB dashboard
+    with the machine-readable taxonomic classification per ROI is
+    available in GitHub:
+    https://github.com/klqi/EDI-NES-LTER-2019/tree/master/auto_join. The
+    individual(ROI)-level data table (Level 1b) is formatted in
+    accordance with recommendations from the Ocean Carbon &amp;
+    Biogeochemistry Phytoplankton Taxonomy Working Group.
+  </para>
+          </section>
+          <section>
+            <title>Summarization per sample</title>
+            <para>
+    [WORKFLOW level1b_2_summary.ipynb]
+  </para>
+            <para>
+    Summarization per sample is possible because we are only providing
+    data for samples for which every ROI had a manual annotation. Code
+    for the summarization from the Level 1b to the Level 2 data table is
+    available in GitHub:
+    https://github.com/klqi/EDI-NES-LTER-2019/blob/master/plot1.
+    Concentrations per taxon per sample may be calculated by dividing
+    the abundance or biovolume by the volume imaged. Abundance does not
+    match 1:1 to cell counts because chain- or colony-forming organisms
+    may be imaged as a single ROI. Note concentrations will be
+    underestimates for those taxa that do not always trigger
+    fluorescence (e.g., heterotrophs). [For the data product from this
+    cruise, we provide a concentration flag for categories undersampled
+    when triggering only on chlorophyll fluorescence as reported by
+    Brownlee et al. (2016) https://doi.org/10.3354/meps11687.]
+  </para>
+          </section>
+          <section>
+            <title>Additional data cleaning and quality assurance</title>
+            <para>
+    [workflow will be in EDI package repo]
+  </para>
+            <para>
+    Additional data cleaning and metadata template assembly were
+    performed with code available on GitHub:
+    https://github.com/WHOIGit/nes-lter-ifcb-transect-winter-2018. Data
+    cleaning included: add lat/lon/depth to Level 1b, add depth to Level
+    2 table, round biovolume and volume_imaged in Level 2, rename column
+    headers in Level 2.
+  </para>
+            <para>
+    We assured that the geographic and temporal coverage of the data
+    tables were within expected ranges. [add manual checks eg spot
+    checking IFCB dashboard lat lon volume features in Level 1b data
+    table against scale bar]
+  </para>
+          </section>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Northeast U.S. Shelf LTER</title>
+      <personnel>
+        <individualName>
+          <givenName>Heidi</givenName>
+          <surName>Sosik</surName>
+        </individualName>
+        <electronicMailAddress>hsosik@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-4591-2842</userId>
+        <role>Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Stace</givenName>
+          <surName>Beaulieu</surName>
+        </individualName>
+        <electronicMailAddress>sbeaulieu@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Changsheng</givenName>
+          <surName>Chen</surName>
+        </individualName>
+        <electronicMailAddress>c1chen@umassd.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-8715-6101</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Rubao</givenName>
+          <surName>Ji</surName>
+        </individualName>
+        <electronicMailAddress>rji@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-8839-5427</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Steven</givenName>
+          <surName>Lentz</surName>
+        </individualName>
+        <electronicMailAddress>slentz@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-7498-0281</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Joel</givenName>
+          <surName>Llopiz</surName>
+        </individualName>
+        <electronicMailAddress>jllopiz@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-7584-7471</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Susanne</givenName>
+          <surName>Menden-Deuer</surName>
+        </individualName>
+        <electronicMailAddress>smenden@uri.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-8434-4251</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Michael</givenName>
+          <surName>Neubert</surName>
+        </individualName>
+        <electronicMailAddress>mneubert@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-8820-5008</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Tatiana</givenName>
+          <surName>Rynearson</surName>
+        </individualName>
+        <electronicMailAddress>rynearson@uri.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0003-2951-0066</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Rachel</givenName>
+          <surName>Stanley</surName>
+        </individualName>
+        <electronicMailAddress>rstanle2@wellesley.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0003-4860-2476</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <abstract>
+        <para>The Northeast U.S. Shelf (NES) Long-Term Ecological Research (LTER) project integrates observations, experiments, and models to understand and predict how planktonic food webs are changing, and how those changes impact the productivity of higher trophic levels. The NES-LTER is co-located with the Northeast U.S. Continental Shelf Large Marine Ecosystem, spanning the Middle Atlantic Bight and Gulf of Maine. Our focal cross-shelf transect extends about 150 km southward from Martha’s Vineyard, MA, to just beyond the shelf break. Our overarching question is: How is climate change impacting the pelagic NES ecosystem and, in particular, affecting the relationship between compositional (e.g., species diversity and size structure) and aggregate (e.g., rates of primary production, and transfer of energy to important forage fish species) variability?</para>
+      </abstract>
+      <funding>
+        <para>NSF Award OCE-1655686</para>
+      </funding>
+    </project>
+    <dataTable>
+      <entityName>level1b_test.csv</entityName>
+      <entityDescription>Individual-level (Level 1b) file that provides classification and size for each imaged Region of Interest (ROI)</entityDescription>
+      <physical>
+        <objectName>level1b_test.csv</objectName>
+        <size unit="bytes">1593</size>
+        <authentication method="MD5">03faaa864d69bbde734f1cf1da255c8a</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>permalink</attributeName>
+          <attributeDefinition>Unique URL identifier pointing to the landing page for the ROI in an external repository. This is used to generate the eventID and occurrenceID</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique URL identifier pointing to the landing page for the ROI in an external repository. This is used to generate the eventID and occurrenceID</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>data_provider_category_HumanObservation</attributeName>
+          <attributeDefinition>Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>scientificName_HumanObservation</attributeName>
+          <attributeDefinition>Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>scientificNameID_HumanObservation</attributeName>
+          <attributeDefinition>Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>higherClassification_group</attributeName>
+          <attributeDefinition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>Area</attributeName>
+          <attributeDefinition>Cross-sectional area of the ROI determined by means specified in the image processing method</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>squareMicrometers</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">14.857</minimum>
+                  <maximum exclusive="false">1006.138</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>Biovolume</attributeName>
+          <attributeDefinition>Biovolume for the ROI determined by means specified in the biovolume calculation method</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>cubicMicrometers</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">26.397</minimum>
+                  <maximum exclusive="false">9091.825</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>maxFeretDiameter</attributeName>
+          <attributeDefinition>Representation of length of the ROI, approximating the largest mesh size for which the organism could be retained, determined by means specified in the image processing method</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micrometer</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">7.975</minimum>
+                  <maximum exclusive="false">76.624</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>minFeretDiameter</attributeName>
+          <attributeDefinition>Representation of width of the ROI, approximating the smallest mesh size through which the ROI could pass, determined by means specified in the image processing method</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micrometer</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">2.888</minimum>
+                  <maximum exclusive="false">35.301</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>eventDate</attributeName>
+          <attributeDefinition>Date and time in UTC</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>decimalLatitude</attributeName>
+          <attributeDefinition>Ship's latitude when sample was taken</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">40.8413</minimum>
+                  <maximum exclusive="false">40.8413</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>decimalLongitude</attributeName>
+          <attributeDefinition>Ship's longitude when sample was taken</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-70.8868</minimum>
+                  <maximum exclusive="false">-70.8868</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth of sample below sea surface. URI http://vocab.nerc.ac.uk/collection/P09/current/DEPH/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">5</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>eventID</attributeName>
+          <attributeDefinition>Darwin Core unique identifier for the sample as an Event (http://rs.tdwg.org/dwc/terms/eventID)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Darwin Core unique identifier for the sample as an Event (http://rs.tdwg.org/dwc/terms/eventID)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>occurrenceID</attributeName>
+          <attributeDefinition>Darwin Core unique identifier for the ROI as an Occurrence (http://rs.tdwg.org/dwc/terms/occurrenceID)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Darwin Core unique identifier for the ROI as an Occurrence (http://rs.tdwg.org/dwc/terms/occurrenceID)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>occurrenceStatus</attributeName>
+          <attributeDefinition>Darwin Core presence or absence of a Taxon at a Location (http://rs.tdwg.org/dwc/terms/occurrenceStatus)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Darwin Core presence or absence of a Taxon at a Location (http://rs.tdwg.org/dwc/terms/occurrenceStatus)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>basisOfRecord</attributeName>
+          <attributeDefinition>Darwin Core HumanObservation or MachineObservation (http://rs.tdwg.org/dwc/terms/basisOfRecord)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Darwin Core HumanObservation or MachineObservation (http://rs.tdwg.org/dwc/terms/basisOfRecord)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>4</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>level2_test.csv</entityName>
+      <entityDescription>Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file</entityDescription>
+      <physical>
+        <objectName>level2_test.csv</objectName>
+        <size unit="bytes">951</size>
+        <authentication method="MD5">0dfae758d3118007fc2cf1b2346a140b</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>permalink</attributeName>
+          <attributeDefinition>Unique URL identifier pointing to the landing page for the sample in an external repository. This is used to generate the eventID corresponding to Darwin Core term http://rs.tdwg.org/dwc/terms/eventID</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique URL identifier pointing to the landing page for the sample in an external repository. This is used to generate the eventID corresponding to Darwin Core term http://rs.tdwg.org/dwc/terms/eventID</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>data_provider_category_HumanObservation</attributeName>
+          <attributeDefinition>Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Category used by the data provider to name the organism for a manual identification, not necessarily a scientific name</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>scientificName_HumanObservation</attributeName>
+          <attributeDefinition>Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Name from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificName, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>scientificNameID_HumanObservation</attributeName>
+          <attributeDefinition>Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Machine-readable Life Science Identifier (LSID) from a recognized taxonomic database (e.g., World Register of Marine Species, AlgaeBase) at the lowest level that matches the data provider category, for a manual identification as basisOfRecord. This corresponds to Darwin Core terms http://rs.tdwg.org/dwc/terms/scientificNameID, http://rs.tdwg.org/dwc/terms/HumanObservation, and http://rs.tdwg.org/dwc/terms/basisOfRecord</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>higherClassification_group_manual</attributeName>
+          <attributeDefinition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>Abundance</attributeName>
+          <attributeDefinition>Count for all ROIs in a data provider category per sample. URI http://vocab.nerc.ac.uk/collection/P02/current/PATX/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">4</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>Biovolume</attributeName>
+          <attributeDefinition>Biovolume summed for all ROIs in a data provider category per sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>cubicMicrometers</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">276.126</minimum>
+                  <maximum exclusive="false">5495.193</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>volume_imaged</attributeName>
+          <attributeDefinition>Volume of seawater for which images were collected per sample.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milliliter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">3.991018854</minimum>
+                  <maximum exclusive="false">3.991018854</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>concentrationFlag</attributeName>
+          <attributeDefinition>concentration flag 1 valid 0 invalid for this taxon when IFCB triggering only on chlorophyll fluorescence</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">1</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeDefinition>Date and time in UTC</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Ship's latitude when sample was taken</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">40.8413</minimum>
+                  <maximum exclusive="false">40.8413</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Ship's longitude when sample was taken</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-70.8868</minimum>
+                  <maximum exclusive="false">-70.8868</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth of sample below sea surface. URI http://vocab.nerc.ac.uk/collection/P09/current/DEPH/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">5</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>3</numberOfRecords>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="cubicMicrometers" multiplierToSI="1e-18" name="cubicMicrometers" parentSI="cubicMeter" unitType="volume">
+          <description>cubic micrometers</description>
+        </unit>
+        <unit id="squareMicrometers" multiplierToSI="1e-12" name="squareMicrometers" parentSI="squareMeter" unitType="area">
+          <description>square micrometers</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
