@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.9.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.2.0  https://nis.lternet.edu/schemas/EML/eml-2.2.0/xsd/eml.xsd" system="edi">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=NES,o=LTER,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
   <dataset>
     <title>Abundance and biovolume of taxonomically-resolved phytoplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</title>
     <creator>
@@ -48,7 +58,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-04-16</pubDate>
+    <pubDate>2020-04-17</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
@@ -147,8 +157,10 @@
             <title>Underway science seawater supplied to the imaging
   instrument</title>
             <para>
-    Underway science seawater was supplied from 5-m water depth
-    continuously during R/V Endeavor cruise EN608 using a diaphragm pump
+    The cruise was on R/V Endeavor and identified as EN608, with the
+    following Digital Object Identifier (DOI)
+    https://doi.org/10.7284/908133. Underway science seawater was
+    supplied from 5-m water depth continuously using a diaphragm pump
     (gentler than an impeller pump for fragile cells). An Imaging
     FlowCytobot (IFCB) sampled at approximately 20-min intervals from a
     1 liter overflow bottle secured in a sink. The samples were
@@ -528,15 +540,13 @@
           <measurementScale>
             <nominal>
               <nonNumericDomain>
-                <textDomain>
-                  <definition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</definition>
-                </textDomain>
+                <enumeratedDomain/>
               </nonNumericDomain>
             </nominal>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>
@@ -795,8 +805,8 @@
       <entityDescription>Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file</entityDescription>
       <physical>
         <objectName>level2_test.csv</objectName>
-        <size unit="bytes">951</size>
-        <authentication method="MD5">0dfae758d3118007fc2cf1b2346a140b</authentication>
+        <size unit="bytes">944</size>
+        <authentication method="MD5">c43779c2c56f73ef1124eab4e24d5a1b</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -882,21 +892,19 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>higherClassification_group_manual</attributeName>
+          <attributeName>higherClassification_group</attributeName>
           <attributeDefinition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
-                <textDomain>
-                  <definition>Higher level phytoplankton group that contains the taxon, from Darwin Core term http://rs.tdwg.org/dwc/terms/higherClassification</definition>
-                </textDomain>
+                <enumeratedDomain/>
               </nonNumericDomain>
             </nominal>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
+            <code>NotApplicable</code>
+            <codeExplanation>Several categories are not organisms thus taxonomic names are NotApplicable</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>

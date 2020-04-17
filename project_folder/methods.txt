@@ -1,6 +1,6 @@
 # Underway science seawater supplied to the imaging instrument
 
-Underway science seawater was supplied from 5-m water depth continuously during R/V Endeavor cruise EN608 using a diaphragm pump (gentler than an impeller pump for fragile cells). An Imaging FlowCytobot (IFCB) sampled at approximately 20-min intervals from a 1 liter overflow bottle secured in a sink. The samples were pre-filtered at the intake using 150 micrometer nitex mesh to avoid aspirating overly large particles that might clog the system. Normally, the same IFCB unit samples from the underway for the entire cruise; however, we replaced the first IFCB (IFCB109) on the second day of the cruise due to a fraction of cells not being imaged.
+The cruise was on R/V Endeavor and identified as EN608, with the following Digital Object Identifier (DOI) https://doi.org/10.7284/908133. Underway science seawater was supplied from 5-m water depth continuously using a diaphragm pump (gentler than an impeller pump for fragile cells). An Imaging FlowCytobot (IFCB) sampled at approximately 20-min intervals from a 1 liter overflow bottle secured in a sink. The samples were pre-filtered at the intake using 150 micrometer nitex mesh to avoid aspirating overly large particles that might clog the system. Normally, the same IFCB unit samples from the underway for the entire cruise; however, we replaced the first IFCB (IFCB109) on the second day of the cruise due to a fraction of cells not being imaged.
 
 # Determining the subset of samples along the NES-LTER Transect
 [WORKFLOW transect_geocheck.py]

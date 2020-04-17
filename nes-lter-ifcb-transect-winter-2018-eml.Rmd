@@ -93,6 +93,7 @@ pkg_id <- "knb-lter-nes.9.1"
 # or else this next step will produce empty files
 # Because this package will have two tables,
 # this first xlsx does not have attributes for either
+# ALSO FOR TWO TABLES figure out how to have 2 catvars templates
 
 xlsx_to_template(metadata.path = paste0(dir, metadata),
                  output.path = paste0(dir, project_folder),
