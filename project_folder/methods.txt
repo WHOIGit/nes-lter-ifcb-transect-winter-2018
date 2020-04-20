@@ -2,8 +2,11 @@
 
 The cruise was on R/V Endeavor and identified as EN608, with the following Digital Object Identifier (DOI) https://doi.org/10.7284/908133. Underway science seawater was supplied from 5-m water depth continuously using a diaphragm pump (gentler than an impeller pump for fragile cells). An Imaging FlowCytobot (IFCB) sampled at approximately 20-min intervals from a 1 liter overflow bottle secured in a sink. The samples were pre-filtered at the intake using 150 micrometer nitex mesh to avoid aspirating overly large particles that might clog the system. Normally, the same IFCB unit samples from the underway for the entire cruise; however, we replaced the first IFCB (IFCB109) on the second day of the cruise due to a fraction of cells not being imaged.
 
+# Instrument settings that affect types and sizes of particles imaged
+
+Images in this dataset were triggered by chlorophyll fluorescence, thus mainly representing phytoplankton. IFCB trigger thresholds were set to image as wide a size range as possible, i.e., 5 to 150 micrometers, with quantitative observations in a more narrow range. Images have resolution 2.77 pixels per micrometer.
+
 # Determining the subset of samples along the NES-LTER Transect
-[WORKFLOW transect_geocheck.py]
 
 All underway samples from this cruise may be explored in the online IFCB dashboard at: https://ifcb-data.whoi.edu/timeline?bin=D20180205T132051_IFCB102&dataset=NESLTER_transect&tags=underway&cruise=EN608. Locations were determined for the IFCB samples based on matching the sample start time rounded down to the nearest minute to the ship position. We provide data for the subset of samples collected within 1 km east or west of the NES-LTER Transect longitude 70 deg 53 min W, with code available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/tree/master/geographic_query.
 
@@ -11,37 +14,27 @@ All underway samples from this cruise may be explored in the online IFCB dashboa
 
 We excluded samples taken at the beginning of the cruise with IFCB109 because an estimated 5-10% of cells were outside the field of view of its camera (there was evidence from the data that degassing was occurring due to the extreme temperature difference between the water sampled and the internal temperature of the IFCB). For the second IFCB (IFCB102) we confirmed there were no samples tagged bad_flow and checked the region of interest (ROI) x y plot in the IFCB dashboard at several time points. During the beginning of the cruise, IFCB102 was being used to check discrete samples from the underway science seawater, as a backup to the IFCB109. Ultimately, we also included 4 IFCB102 samples tagged underway and discrete to account for some of the excluded IFCB109 samples early in the cruise.
 
-# Instrument settings that affect types and sizes of particles imaged
-
-Images in this dataset were triggered by chlorophyll fluorescence, thus mainly representing phytoplankton. IFCB trigger thresholds were set to image as wide a size range as possible, i.e., 5 to 150 micrometers, with quantitative observations in a more narrow range. Images have resolution 2.77 pixels per micrometer.
-
-# Determining volume imaged per sample
-[WORKFLOW get_volume.py]
-
-The IFCB draws in 5 ml per sample but does not image the entire volume. The volume imaged per sample was determined using code available in GitHub: https://github.com/joefutrelle/pyifcb and https://github.com/klqi/EDI-NES-LTER-2019/tree/master/volume.
-
 # Image processing method and version
 
 Images were processed with software for segmentation and feature extraction to determine size parameters per ROI (IFCB Features Version 4). Results from image processing are provided in the IFCB dashboard per sample as a features_v4.csv file. We selected a subset of 4 features to provide per ROI (Area, Biovolume, maxFeretDiameter, minFeretDiameter). The biovolume calculation method is described by Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278.
  
 # Manual annotation and classification
-[WORKFLOW classification WoRMS_verify.Rmd and WoRMS_verify_cleaning.R]
 
-Identifications to morphological categories were done manually using annotation software with a database that also records the annotators and the number of times an annotation has been verified. We queried the database to export manual annotations for the geographic subset of IFCB102 samples and then further subsetted to include only those samples for which every ROI in the sample was verified by a high power annotator [- or - for which we have high confidence in the manual classifications - or - to reduce uncertainty]. In this version of this data product, each ROI corresponds to an occurrence of a single taxon (in future versions we may account for categories or tags for a small number of ROIs that represent multiple taxa). Most of the morphological category names could be resolved to accepted taxonomic names and machine-readable identifiers in the World Register of Marine Species (WoRMS). The level of taxonomic identification varies, but some distinctive taxa can be identified to species level. Some morphological categories could only be matched to WoRMS at a higher taxonomic level, for example mix_elongated is a morphological category of diatoms. Some morphological categories could not be matched to WoRMS, but were matched to Eukaryota in AlgaeBase. We also resolved taxonomic names and identifiers for the full list of categories in the annotation database, to be able to provide occurrenceStatus absent for those categories not observed in samples from this cruise. For the data product from this cruise, we also provide a higher classification group for each organism - diatoms, dinoflagellates, haptophytes, or other than those 3 - to enable summarization for functional groups. Several categories are not organisms thus taxonomic names are NotApplicable (e.g., bubble, detritus). Code and classification lookup tables are available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/tree/master/namespace_validation.
+Identifications to morphological categories were done manually using annotation software with a database that also records the annotators and the number of times an annotation has been verified. We queried the database to export manual annotations for the geographic subset of IFCB102 samples and then further subsetted to include only those samples for which every ROI in the sample was verified by a high power annotator (to increase certainty in the manual identifications). In this version of this data product, each ROI corresponds to an occurrence of a single taxon (in future versions we may account for categories or tags for a small number of ROIs that represent multiple taxa). Most of the morphological category names could be resolved to accepted taxonomic names and machine-readable identifiers in the World Register of Marine Species (WoRMS). The level of taxonomic identification varies, but some distinctive taxa can be identified to species level. Some morphological categories could only be matched to WoRMS at a higher taxonomic level, for example mix_elongated is a morphological category of diatoms. Some morphological categories could not be matched to WoRMS, but were matched to Eukaryota in AlgaeBase. We also resolved taxonomic names and identifiers for the full list of categories in the annotation database, to be able (in a future version of this dataset) to provide occurrenceStatus absent for those categories not observed in samples from this cruise. For the data product from this cruise, we also provide a higher classification group for each organism - diatoms, dinoflagellates, haptophytes, or other than those 3 - to enable summarization for functional groups. Several categories are not organisms thus taxonomic names are NotApplicable (e.g., bubble, detritus). Code and classification lookup tables are available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/tree/master/namespace_validation.
 
 # Joining the features and taxonomic classification per ROI
-[WORKFLOW auto_extract.py]
 
 Code that joins the image URL and features from the IFCB dashboard with the machine-readable taxonomic classification per ROI is available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/tree/master/auto_join. The individual(ROI)-level data table (Level 1b) is formatted in accordance with recommendations from the Ocean Carbon & Biogeochemistry Phytoplankton Taxonomy Working Group.
 
+# Determining volume imaged per sample
+
+The IFCB draws in 5 ml per sample but does not image the entire volume. The volume imaged per sample was determined using code available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/tree/master/volume.
+
 # Summarization per sample
-[WORKFLOW level1b_2_summary.ipynb]
 
 Summarization per sample is possible because we are only providing data for samples for which every ROI had a manual annotation. Code for the summarization from the Level 1b to the Level 2 data table is available in GitHub: https://github.com/klqi/EDI-NES-LTER-2019/blob/master/plot1.  Concentrations per taxon per sample may be calculated by dividing the abundance or biovolume by the volume imaged. Abundance does not match 1:1 to cell counts because chain- or colony-forming organisms may be imaged as a single ROI. Note concentrations will be underestimates for those taxa that do not always trigger fluorescence (e.g., heterotrophs). We provide a concentration flag for categories undersampled when triggering only on chlorophyll fluorescence as reported by Brownlee et al. (2016) https://doi.org/10.3354/meps11687.
 
 # Additional data cleaning and quality assurance
-[workflow will be in EDI package repo]
 
-Additional data cleaning and metadata template assembly were performed with code available on GitHub: https://github.com/WHOIGit/nes-lter-ifcb-transect-winter-2018. Data cleaning included: add lat/lon/depth to Level 1b, add depth to Level 2 table, round biovolume and volume_imaged in Level 2, rename column headers in Level 2.
-
+Additional data cleaning and metadata template assembly were performed with code available on GitHub: https://github.com/WHOIGit/nes-lter-ifcb-transect-winter-2018. We added attributes to enable harvesting of the level 1b data table as an occurrence table for the Ocean Biogeographic Information System (OBIS). Data cleaning included: add lat/lon/depth to Level 1b, add depth to Level 2 table, round biovolume and volume_imaged in Level 2, rename column headers in Level 2.
 We assured that the geographic and temporal coverage of the data tables were within expected ranges.  [add manual checks eg spot checking IFCB dashboard lat lon volume features in Level 1b data table against scale bar]
