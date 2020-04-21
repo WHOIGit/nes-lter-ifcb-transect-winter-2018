@@ -1,7 +1,7 @@
 ---
 title: "NES-LTER IFCB Transect Winter 2018"
 author: "Stace Beaulieu"
-date: "15 April 2020"
+date: "21 April 2020"
 output: html_document
 ---
 
@@ -34,16 +34,72 @@ libs <- c("tidyverse", "readxl", "lubridate", "devtools", "EMLassemblyline", "EM
 lapply(libs, require, character.only = TRUE)
 ```
 
-## Load data tables level1b and level2
+## Load data tables level1b and level2 revise column headers and add columns here for OBIS
 
-Ultimately we will add columns and revise column headers here
 This is not necessary for test csv files
 
 ```{r}
 
-# note test csv files already have the columns and column headers for EDI product
-level1b <- read_csv("project_folder/level1b_test.csv")
-level2 <- read_csv("project_folder/level2_test.csv")
+# # note test csv files already have the columns and column headers for EDI product
+# level1b <- read_csv("project_folder/level1b_test.csv")
+# level2 <- read_csv("project_folder/level2_test.csv")
+
+level1b <- read_csv("https://raw.githubusercontent.com/klqi/EDI-NES-LTER-2019/master/auto_join/level_1b_manual.csv")
+
+# level1b needs an occurrenceID
+# make a copy of the column
+level1b$occurrenceID <- level1b$associatedMedia
+# strip prefix http://ifcb-data.whoi.edu/
+level1b$occurrenceID <- gsub("http://ifcb-data.whoi.edu/", "", level1b$occurrenceID)
+# strip suffix .html
+level1b$occurrenceID <- gsub("\\..*", "", level1b$occurrenceID)
+
+# level1b needs an eventID to be able to join with level2
+# example: use http://ifcb-data.whoi.edu/NESLTER_transect/D20180201T103729_IFCB102_00002.html
+# to generate NESLTER_transect/D20180201T103729_IFCB102
+# make a copy of the column
+level1b$eventID <- level1b$occurrenceID
+# strip suffix after IFCB102
+level1b$eventID <- gsub("(IFCB102).*", "\\1", level1b$eventID)
+
+
+# need level 2 data to be able to add columns required for OBIS occurrence table
+# eventDate, decimalLatitude, decimalLongitude, depth
+level2 <- read_csv("https://raw.githubusercontent.com/klqi/EDI-NES-LTER-2019/master/plot1/level_2_manual.csv")
+# rename level2 columns to eventDate, decimalLatitude, decimalLongitude, higherClassification_group
+level2 <- rename(level2, eventDate = date)
+level2 <- rename(level2, decimalLatitude = gps_furuno_latitude)
+level2 <- rename(level2, decimalLongitude = gps_furuno_longitude)
+level2 <- rename(level2, higherClassification_group = higherClassification_group_manual)
+level2$depth = 5
+
+# level2 needs an eventID to be able to join with level1
+# make a copy of the column
+level2$eventID <- level2$associatedMedia
+# strip prefix http://ifcb-data.whoi.edu/
+level2$eventID <- gsub("http://ifcb-data.whoi.edu/", "", level2$eventID)
+# strip suffix .html
+level2$eventID <- gsub("\\..*", "", level2$eventID)
+
+# create dataframe with only the unique attributes assoc'd to eventIDs from level2
+# eventID, eventDate, decimalLatitude, decimalLongitude, plus depth
+uniqueeventIDs <- select(level2, eventID, eventDate, decimalLatitude, decimalLongitude, depth)
+uniqueeventIDs <- distinct(uniqueeventIDs)
+# unique eventIDs should be 60 for IFCB EN608 dataset
+# manually inspect eventDate for temporal coverage
+
+# full_join level1b with uniqueeventIDs from level2 to make sure no samples missing
+level1bEDI <- full_join(level1b, uniqueeventIDs, by = "eventID")
+
+# need level 1b data to have more columns required for OBIS occurrence table
+level1bEDI$occurrenceStatus = "present"
+level1bEDI$basisOfRecord = "HumanObservation"
+
+# ultimately need to strip level1b column "X1"
+level1bEDI <- select(level1bEDI, -X1)
+
+# ultimately need to add column concentrationFlag to level2
+level2$concentrationFlag = 1  # placeholder
 
 ```
 
@@ -58,12 +114,30 @@ Call the map_locs function from edi-utility.R to map the sampling locations. Per
 # Note Package `maps` required for `map_data`
 
 # level 1b
-map_locs(df = level1b, xvar = "decimalLongitude", yvar = "decimalLatitude",
+map_locs(df = level1bEDI, xvar = "decimalLongitude", yvar = "decimalLatitude",
          region = "transect", colorvar = NULL)
 
 # level 2
-map_locs(df = level2, xvar = "longitude", yvar = "latitude",
+map_locs(df = level2, xvar = "decimalLongitude", yvar = "decimalLatitude",
          region = "transect", colorvar = NULL)
+
+```
+
+## Column Header Organization and write files for upload to EDI
+```{r}
+# define headers for columns in desired order
+level1bEDI_headers <- c("associatedMedia","data_provider_category_HumanObservation","scientificName_HumanObservation","scientificNameID_HumanObservation","higherClassification_group","Area","Biovolume","maxFeretDiameter","minFeretDiameter","eventDate","decimalLatitude","decimalLongitude","depth","eventID","occurrenceID","occurrenceStatus","basisOfRecord")
+level2_headers <- c("associatedMedia","data_provider_category_HumanObservation","scientificName_HumanObservation","scientificNameID_HumanObservation","higherClassification_group","Abundance","Biovolume","volume_imaged","concentrationFlag","eventDate","decimalLatitude","decimalLongitude","depth","eventID")
+
+# reorder columns as necessary
+level1b_edi <- level1bEDI[, level1bEDI_headers]
+level2_edi <- level2[, level2_headers]
+
+# write files for upload to EDI
+write.csv(level1b_edi, paste0(dir, "/project_folder/level1b_edi.csv"),
+          row.names = FALSE)
+write.csv(level2_edi, file.path(dir, "/project_folder/level2_edi.csv"),
+          row.names = FALSE)
 
 ```
 
@@ -82,9 +156,12 @@ Step 4: Inserting a custom NES-LTER parent project node
 # define input for EML assembly
 metadata <- "IFCB-EN608-metadata"  # xlsx file
 project_folder <- "project_folder/"
-level1b_test <- "level1b_test" # metadata xlsx file
-level2_test <- "level2_test"   # metadata xlsx file
-edi_data <- c("level1b_test", "level2_test")  # data files
+# level1b_test <- "level1b_test" # metadata xlsx file
+# level2_test <- "level2_test"   # metadata xlsx file
+level1b_edi <- "level1b_edi" # metadata xlsx and data csv files
+level2_edi <- "level2_edi" # metadata xlsx and data csv files
+# edi_data <- c("level1b_test", "level2_test")  # data files
+edi_data <- c("level1b_edi", "level2_edi")  # data files
 file_descriptions <- c("Individual-level (Level 1b) file that provides classification and size for each imaged Region of Interest (ROI)", "Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file")
 pkg_id <- "knb-lter-nes.9.1"
 
@@ -99,25 +176,33 @@ xlsx_to_template(metadata.path = paste0(dir, metadata),
                  output.path = paste0(dir, project_folder),
                  edi.filename = NULL, 
                  rights = "CCBY")
-# level1b attributes needs separate xlxs
-# figure out how to rename this so not to be confused with data file
-xlsx_to_template(metadata.path = paste0(dir, level1b_test), 
+# # level1b attributes needs separate xlxs
+# # figure out how to rename this so not to be confused with data file
+# xlsx_to_template(metadata.path = paste0(dir, level1b_test), 
+#                  output.path = paste0(dir, project_folder),
+#                  edi.filename = level1b_test, 
+#                  rights = "CCBY")
+xlsx_to_template(metadata.path = paste0(dir, level1b_edi), 
                  output.path = paste0(dir, project_folder),
-                 edi.filename = level1b_test, 
+                 edi.filename = level1b_edi, 
                  rights = "CCBY")
-# level2 attributes needs separate xlxs
-# figure out how to rename this so not to be confused with data file
-xlsx_to_template(metadata.path = paste0(dir, level2_test), 
+# # level2 attributes needs separate xlxs
+# # figure out how to rename this so not to be confused with data file
+# xlsx_to_template(metadata.path = paste0(dir, level2_test), 
+#                  output.path = paste0(dir, project_folder),
+#                  edi.filename = level2_test, 
+#                  rights = "CCBY")
+xlsx_to_template(metadata.path = paste0(dir, level2_edi), 
                  output.path = paste0(dir, project_folder),
-                 edi.filename = level2_test, 
+                 edi.filename = level2_edi, 
                  rights = "CCBY")
 
 # Data Coverage
 # use level2
 # isolate date and geospatial columns for input
-date_col <- as.Date(level2$date)
-lat_col <- level2$latitude
-lon_col <- level2$longitude
+date_col <- as.Date(level2$eventDate)
+lat_col <- level2$decimalLatitude
+lon_col <- level2$decimalLongitude
 # run function to determine geospatial and temporal coverage
 coverage <- data_coverage(dates = date_col, lat = lat_col, lon = lon_col)
 

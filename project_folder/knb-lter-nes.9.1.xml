@@ -58,7 +58,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-04-20</pubDate>
+    <pubDate>2020-04-21</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
@@ -99,7 +99,7 @@
     </keywordSet>
     <additionalInfo>
       <para>
-  We would like to thank the Ocean Carbon &amp;amp; Biogeochemistry
+  We would like to thank the Ocean Carbon and Biogeochemistry
   Phytoplankton Taxonomy Working Group, Abby Benson at OBIS-USA, and the
   Environmental Data Initiative Summer 2019 Fellowship Program. We
   acknowledge additional funding from NSF CyberSEES #1539256.
@@ -133,10 +133,10 @@
       <geographicCoverage>
         <geographicDescription>NES-LTER Transect</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-70.8868</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.8868</eastBoundingCoordinate>
+          <westBoundingCoordinate>-70.895</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.8716</eastBoundingCoordinate>
           <northBoundingCoordinate>40.8413</northBoundingCoordinate>
-          <southBoundingCoordinate>40.8413</southBoundingCoordinate>
+          <southBoundingCoordinate>39.8143</southBoundingCoordinate>
         </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
@@ -145,7 +145,7 @@
             <calendarDate>2018-02-01</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2018-02-01</calendarDate>
+            <calendarDate>2018-02-04</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
@@ -234,6 +234,8 @@
     of 4 features to provide per ROI (Area, Biovolume, maxFeretDiameter,
     minFeretDiameter). The biovolume calculation method is described by
     Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278.
+    Image processing yielded no features for only 7 of the 144,281 ROIs
+    in this dataset.
   </para>
           </section>
           <section>
@@ -431,16 +433,16 @@
       </funding>
     </project>
     <dataTable>
-      <entityName>level1b_test.csv</entityName>
+      <entityName>level1b_edi.csv</entityName>
       <entityDescription>Individual-level (Level 1b) file that provides classification and size for each imaged Region of Interest (ROI)</entityDescription>
       <physical>
-        <objectName>level1b_test.csv</objectName>
-        <size unit="bytes">1593</size>
-        <authentication method="MD5">03faaa864d69bbde734f1cf1da255c8a</authentication>
+        <objectName>level1b_edi.csv</objectName>
+        <size unit="bytes">53414386</size>
+        <authentication method="MD5">36d6021fc10dff6b68432d8390129e27</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
+            <recordDelimiter>\r\n</recordDelimiter>
             <attributeOrientation>column</attributeOrientation>
             <simpleDelimited>
               <fieldDelimiter>,</fieldDelimiter>
@@ -450,14 +452,14 @@
       </physical>
       <attributeList>
         <attribute>
-          <attributeName>permalink</attributeName>
-          <attributeDefinition>Unique URL identifier pointing to the landing page for the ROI in an external repository. This is used to generate the eventID and occurrenceID</attributeDefinition>
+          <attributeName>associatedMedia</attributeName>
+          <attributeDefinition>Unique URL identifier pointing to the landing page for the ROI in an external repository. Darwin Core term http://rs.tdwg.org/dwc/terms/associatedMedia. This is used to generate the occurrenceID.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Unique URL identifier pointing to the landing page for the ROI in an external repository. This is used to generate the eventID and occurrenceID</definition>
+                  <definition>Unique URL identifier pointing to the landing page for the ROI in an external repository. Darwin Core term http://rs.tdwg.org/dwc/terms/associatedMedia. This is used to generate the occurrenceID.</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
@@ -549,8 +551,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">14.857</minimum>
-                  <maximum exclusive="false">1006.138</maximum>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">19451.185</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -572,8 +574,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">26.397</minimum>
-                  <maximum exclusive="false">9091.825</maximum>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1764227</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -595,8 +597,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">7.975</minimum>
-                  <maximum exclusive="false">76.624</maximum>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">490.69</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -618,8 +620,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">2.888</minimum>
-                  <maximum exclusive="false">35.301</maximum>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">194.822</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -656,7 +658,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">40.8413</minimum>
+                  <minimum exclusive="false">39.8143</minimum>
                   <maximum exclusive="false">40.8413</maximum>
                 </bounds>
               </numericDomain>
@@ -679,8 +681,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.8868</minimum>
-                  <maximum exclusive="false">-70.8868</maximum>
+                  <minimum exclusive="false">-70.895</minimum>
+                  <maximum exclusive="false">-70.8716</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -786,19 +788,19 @@
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>4</numberOfRecords>
+      <numberOfRecords>144281</numberOfRecords>
     </dataTable>
     <dataTable>
-      <entityName>level2_test.csv</entityName>
+      <entityName>level2_edi.csv</entityName>
       <entityDescription>Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file</entityDescription>
       <physical>
-        <objectName>level2_test.csv</objectName>
-        <size unit="bytes">944</size>
-        <authentication method="MD5">c43779c2c56f73ef1124eab4e24d5a1b</authentication>
+        <objectName>level2_edi.csv</objectName>
+        <size unit="bytes">385364</size>
+        <authentication method="MD5">189a45de09843a1112024cf1c63cbd85</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
+            <recordDelimiter>\r\n</recordDelimiter>
             <attributeOrientation>column</attributeOrientation>
             <simpleDelimited>
               <fieldDelimiter>,</fieldDelimiter>
@@ -808,14 +810,14 @@
       </physical>
       <attributeList>
         <attribute>
-          <attributeName>permalink</attributeName>
-          <attributeDefinition>Unique URL identifier pointing to the landing page for the sample in an external repository. This is used to generate the eventID corresponding to Darwin Core term http://rs.tdwg.org/dwc/terms/eventID</attributeDefinition>
+          <attributeName>associatedMedia</attributeName>
+          <attributeDefinition>Unique URL identifier pointing to the landing page for the sample in an external repository. Darwin Core term http://rs.tdwg.org/dwc/terms/associatedMedia. This is used to generate the eventID.</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>Unique URL identifier pointing to the landing page for the sample in an external repository. This is used to generate the eventID corresponding to Darwin Core term http://rs.tdwg.org/dwc/terms/eventID</definition>
+                  <definition>Unique URL identifier pointing to the landing page for the sample in an external repository. Darwin Core term http://rs.tdwg.org/dwc/terms/associatedMedia. This is used to generate the eventID.</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
@@ -897,7 +899,7 @@
         </attribute>
         <attribute>
           <attributeName>Abundance</attributeName>
-          <attributeDefinition>Count for all ROIs in a data provider category per sample. URI http://vocab.nerc.ac.uk/collection/P02/current/PATX/</attributeDefinition>
+          <attributeDefinition>Count for all ROIs in a data provider category per sample. This term corresponds to URI http://vocab.nerc.ac.uk/collection/P02/current/PATX/ however can also be matched to Darwin Core organismQuantity</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -908,7 +910,7 @@
                 <numberType>natural</numberType>
                 <bounds>
                   <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">4</maximum>
+                  <maximum exclusive="false">3273</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -930,8 +932,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">276.126</minimum>
-                  <maximum exclusive="false">5495.193</maximum>
+                  <minimum exclusive="false">2.852</minimum>
+                  <maximum exclusive="false">1780673.505</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -953,8 +955,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">3.991018854</minimum>
-                  <maximum exclusive="false">3.991018854</maximum>
+                  <minimum exclusive="false">3.35293694583333</minimum>
+                  <maximum exclusive="false">4.34358725</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -988,7 +990,7 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>date</attributeName>
+          <attributeName>eventDate</attributeName>
           <attributeDefinition>Date and time in UTC</attributeDefinition>
           <storageType>date</storageType>
           <measurementScale>
@@ -1003,7 +1005,7 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>latitude</attributeName>
+          <attributeName>decimalLatitude</attributeName>
           <attributeDefinition>Ship's latitude when sample was taken</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
@@ -1014,7 +1016,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">40.8413</minimum>
+                  <minimum exclusive="false">39.8143</minimum>
                   <maximum exclusive="false">40.8413</maximum>
                 </bounds>
               </numericDomain>
@@ -1026,7 +1028,7 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>longitude</attributeName>
+          <attributeName>decimalLongitude</attributeName>
           <attributeDefinition>Ship's longitude when sample was taken</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
@@ -1037,8 +1039,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.8868</minimum>
-                  <maximum exclusive="false">-70.8868</maximum>
+                  <minimum exclusive="false">-70.895</minimum>
+                  <maximum exclusive="false">-70.8716</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -1071,8 +1073,26 @@
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
+        <attribute>
+          <attributeName>eventID</attributeName>
+          <attributeDefinition>Darwin Core unique identifier for the sample as an Event (http://rs.tdwg.org/dwc/terms/eventID)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Darwin Core unique identifier for the sample as an Event (http://rs.tdwg.org/dwc/terms/eventID)</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
       </attributeList>
-      <numberOfRecords>3</numberOfRecords>
+      <numberOfRecords>1360</numberOfRecords>
     </dataTable>
   </dataset>
   <additionalMetadata>
