@@ -16,7 +16,7 @@ We excluded samples taken at the beginning of the cruise with IFCB109 because an
 
 # Image processing method and version
 
-Images were processed with software for segmentation and feature extraction to determine size parameters per ROI (IFCB Features Version 4). Results from image processing are provided in the IFCB dashboard per sample as a features_v4.csv file. We selected a subset of 4 features to provide per ROI (Area, Biovolume, maxFeretDiameter, minFeretDiameter). The biovolume calculation method is described by Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278. Image processing yielded no features for only 7 of the 144,281 ROIs in this dataset.
+Images were processed with software for segmentation and feature extraction to determine size parameters per ROI (IFCB Features Version 4). Results from image processing are provided in the IFCB dashboard per sample as a features_v4.csv file. We selected a subset of 4 features to provide per ROI (Area, Biovolume, maxFeretDiameter, minFeretDiameter). The biovolume calculation method is described by Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278. Image processing yielded no features for only 7 of the 144,281 ROIs in this dataset. For direct access to images replace the .html extension in the Level 1b associatedMedia with .jpg or .png.
  
 # Manual annotation and classification
 

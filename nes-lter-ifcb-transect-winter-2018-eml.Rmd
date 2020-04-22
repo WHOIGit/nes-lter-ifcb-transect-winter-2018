@@ -1,7 +1,7 @@
 ---
 title: "NES-LTER IFCB Transect Winter 2018"
 author: "Stace Beaulieu"
-date: "21 April 2020"
+date: "22 April 2020"
 output: html_document
 ---
 
@@ -44,7 +44,7 @@ This is not necessary for test csv files
 # level1b <- read_csv("project_folder/level1b_test.csv")
 # level2 <- read_csv("project_folder/level2_test.csv")
 
-level1b <- read_csv("https://raw.githubusercontent.com/klqi/EDI-NES-LTER-2019/master/auto_join/level_1b_manual.csv")
+level1b <- read_csv("https://github.com/klqi/EDI-NES-LTER-2019/raw/f040f31c290ff40baf9a48c9ce2dd57b46336900/auto_join/level_1b_manual.csv")  # does not account for 7 ROIs with features zero
 
 # level1b needs an occurrenceID
 # make a copy of the column
@@ -65,7 +65,7 @@ level1b$eventID <- gsub("(IFCB102).*", "\\1", level1b$eventID)
 
 # need level 2 data to be able to add columns required for OBIS occurrence table
 # eventDate, decimalLatitude, decimalLongitude, depth
-level2 <- read_csv("https://raw.githubusercontent.com/klqi/EDI-NES-LTER-2019/master/plot1/level_2_manual.csv")
+level2 <- read_csv("https://github.com/klqi/EDI-NES-LTER-2019/raw/f040f31c290ff40baf9a48c9ce2dd57b46336900/plot1/level_2_manual.csv")
 # rename level2 columns to eventDate, decimalLatitude, decimalLongitude, higherClassification_group
 level2 <- rename(level2, eventDate = date)
 level2 <- rename(level2, decimalLatitude = gps_furuno_latitude)
@@ -95,11 +95,30 @@ level1bEDI <- full_join(level1b, uniqueeventIDs, by = "eventID")
 level1bEDI$occurrenceStatus = "present"
 level1bEDI$basisOfRecord = "HumanObservation"
 
-# ultimately need to strip level1b column "X1"
+# strip level1b extraneous column "X1"
 level1bEDI <- select(level1bEDI, -X1)
 
-# ultimately need to add column concentrationFlag to level2
-level2$concentrationFlag = 1  # placeholder
+# add column concentrationFlag to level2 since IFCB triggered only on fluorescence
+level2$concentrationFlag = 1  # initiate concentrationFlag with 1 likely valid
+
+# for the following data_provider_category_HumanObservation replace concentrationFlag with zero may be invalid
+# 20200414_classify_classlabel_matched_sorted.xls
+# "amoeba", "ciliate", "detritus", "detritus clear", "Dinophyceae", "Eutintinnus", "Favella", "fecal pellet", "flagellate", "foraminifera", "Gyrodinium", "Helicostomella subulata", "Nauplii", "Polykrikos", "Radiozoa", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis", "zooplankton", "mix", "Parvicorbicula socialis", "cryptophyta", "Leptocylindrus mediterraneus"
+# the following as reported by Brownlee et al. (2016) https://doi.org/10.3354/meps11687
+# "ciliate", "Eutintinnus", "Gyrodinium", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis"
+# the following because heterotrophs or the group includes heterotrophs
+# "amoeba", "Dinophyceae", "flagellate", "foraminifera", "Nauplii", "Parvicorbicula socialis", "Radiozoa", "zooplankton"
+# the following because not organisms
+# "bead", detritus", "detritus clear", "fecal pellet", "other"
+# the following empirical Emily Peacock pers. comm.
+# "cryptophyta" EN608, "Favella", "Leptocylindrus mediterraneus", "Helicostomella subulata", "mix", "Polykrikos"
+
+undersampledTriggerFluor <- list("amoeba", "bead", "ciliate", "cryptophyta", "detritus", "detritus clear", "Dinophyceae", "Eutintinnus", "Favella", "fecal pellet", "flagellate", "foraminifera", "Gyrodinium", "Helicostomella subulata", "Leptocylindrus mediterraneus", "mix","Nauplii", "other", "Parvicorbicula socialis", "Polykrikos", "Radiozoa", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis", "zooplankton")
+
+for (i in undersampledTriggerFluor) {
+level2 %>% mutate(concentrationFlag = replace(concentrationFlag, data_provider_category_HumanObservation == i, 0)) -> level2
+}
+
 
 ```
 

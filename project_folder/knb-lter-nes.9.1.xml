@@ -58,7 +58,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-04-21</pubDate>
+    <pubDate>2020-04-22</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
@@ -100,9 +100,11 @@
     <additionalInfo>
       <para>
   We would like to thank the Ocean Carbon and Biogeochemistry
-  Phytoplankton Taxonomy Working Group, Abby Benson at OBIS-USA, and the
-  Environmental Data Initiative Summer 2019 Fellowship Program. We
-  acknowledge additional funding from NSF CyberSEES #1539256.
+  Phytoplankton Taxonomy Working Group, Abby Benson at OBIS-USA and the
+  Standardizing Marine Biological Data Working Group, the LTER
+  Non-Tabular Data Working Group, and the Environmental Data Initiative
+  Summer 2019 Fellowship Program. We acknowledge additional funding from
+  NSF CyberSEES #1539256.
 </para>
     </additionalInfo>
     <intellectualRights>
@@ -235,7 +237,8 @@
     minFeretDiameter). The biovolume calculation method is described by
     Moberg and Sosik (2012) https://doi.org/10.4319/lom.2012.10.278.
     Image processing yielded no features for only 7 of the 144,281 ROIs
-    in this dataset.
+    in this dataset. For direct access to images replace the .html
+    extension in the Level 1b associatedMedia with .jpg or .png.
   </para>
           </section>
           <section>
@@ -530,7 +533,24 @@
           <measurementScale>
             <nominal>
               <nonNumericDomain>
-                <enumeratedDomain/>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Bacillariophyceae</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:148899</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Dinoflagellata</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:146203</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Haptophyta</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:369190</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>other than diatoms dinoflagellates or haptophytes</code>
+                    <definition>taxon that can not be classified under any of the 3 listed higher level phytoplankton groups</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
               </nonNumericDomain>
             </nominal>
           </measurementScale>
@@ -796,7 +816,7 @@
       <physical>
         <objectName>level2_edi.csv</objectName>
         <size unit="bytes">385364</size>
-        <authentication method="MD5">189a45de09843a1112024cf1c63cbd85</authentication>
+        <authentication method="MD5">98231a460b74d4027a5df5be46860b46</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -888,7 +908,24 @@
           <measurementScale>
             <nominal>
               <nonNumericDomain>
-                <enumeratedDomain/>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Bacillariophyceae</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:148899</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Dinoflagellata</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:146203</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Haptophyta</code>
+                    <definition>urn:lsid:marinespecies.org:taxname:369190</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>other than diatoms dinoflagellates or haptophytes</code>
+                    <definition>taxon that can not be classified under any of the 3 listed higher level phytoplankton groups</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
               </nonNumericDomain>
             </nominal>
           </measurementScale>
@@ -976,9 +1013,9 @@
                 <standardUnit>dimensionless</standardUnit>
               </unit>
               <numericDomain>
-                <numberType>natural</numberType>
+                <numberType>whole</numberType>
                 <bounds>
-                  <minimum exclusive="false">1</minimum>
+                  <minimum exclusive="false">0</minimum>
                   <maximum exclusive="false">1</maximum>
                 </bounds>
               </numericDomain>
