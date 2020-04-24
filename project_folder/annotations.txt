@@ -1,0 +1,2 @@
+element	predicate_label	predicate_uri	object_label	object_uri
+/dataset	is about	http://purl.obolibrary.org/obo/IAO_0000136	image	http://purl.obolibrary.org/obo/IAO_0000101

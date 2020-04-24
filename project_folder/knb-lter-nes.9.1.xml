@@ -58,7 +58,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-04-22</pubDate>
+    <pubDate>2020-04-24</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
@@ -96,6 +96,10 @@
       <keyword>marine</keyword>
       <keyword>oceanography</keyword>
       <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>image</keyword>
+      <keywordThesaurus>Open Biological and Biomedical Ontology (OBO)</keywordThesaurus>
     </keywordSet>
     <additionalInfo>
       <para>
@@ -323,14 +327,12 @@
     Additional data cleaning and metadata template assembly were
     performed with code available on GitHub:
     https://github.com/WHOIGit/nes-lter-ifcb-transect-winter-2018. We
-    added attributes to enable harvesting of the level 1b data table as
-    an occurrence table for the Ocean Biogeographic Information System
-    (OBIS). Data cleaning included: add lat/lon/depth to Level 1b, add
-    depth to Level 2 table, round biovolume and volume_imaged in Level
-    2, rename column headers in Level 2. We assured that the geographic
-    and temporal coverage of the data tables were within expected
-    ranges. [add manual checks eg spot checking IFCB dashboard lat lon
-    volume features in Level 1b data table against scale bar]
+    renamed or added attributes to enable harvesting of the level 1b
+    data table as an occurrence table for the Ocean Biogeographic
+    Information System (OBIS, e.g., occurrenceID, eventDate,
+    decimalLongitude, decimalLatitude, occurrenceStatus, basisOfRecord).
+    We assured that the geographic and temporal coverage and values for
+    attributes were within expected ranges.
   </para>
           </section>
         </description>
@@ -440,8 +442,8 @@
       <entityDescription>Individual-level (Level 1b) file that provides classification and size for each imaged Region of Interest (ROI)</entityDescription>
       <physical>
         <objectName>level1b_edi.csv</objectName>
-        <size unit="bytes">53414386</size>
-        <authentication method="MD5">36d6021fc10dff6b68432d8390129e27</authentication>
+        <size unit="bytes">53414414</size>
+        <authentication method="MD5">dab94b5831e52710e05eb216e944f860</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -571,7 +573,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0</minimum>
+                  <minimum exclusive="false">5.343</minimum>
                   <maximum exclusive="false">19451.185</maximum>
                 </bounds>
               </numericDomain>
@@ -594,7 +596,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0</minimum>
+                  <minimum exclusive="false">2.747</minimum>
                   <maximum exclusive="false">1764227</maximum>
                 </bounds>
               </numericDomain>
@@ -617,7 +619,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0</minimum>
+                  <minimum exclusive="false">3.229</minimum>
                   <maximum exclusive="false">490.69</maximum>
                 </bounds>
               </numericDomain>
@@ -640,7 +642,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0</minimum>
+                  <minimum exclusive="false">0.722</minimum>
                   <maximum exclusive="false">194.822</maximum>
                 </bounds>
               </numericDomain>
@@ -815,8 +817,8 @@
       <entityDescription>Sample-level (Level 2) file that summarizes the individual-level (Level 1b) file</entityDescription>
       <physical>
         <objectName>level2_edi.csv</objectName>
-        <size unit="bytes">385364</size>
-        <authentication method="MD5">98231a460b74d4027a5df5be46860b46</authentication>
+        <size unit="bytes">372353</size>
+        <authentication method="MD5">c39e25cded2683fa6c898ce2b74e69ea</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -992,8 +994,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">3.35293694583333</minimum>
-                  <maximum exclusive="false">4.34358725</maximum>
+                  <minimum exclusive="false">3.353</minimum>
+                  <maximum exclusive="false">4.344</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
