@@ -1,7 +1,7 @@
 ---
 title: "NES-LTER IFCB Transect Winter 2018"
 author: "Stace Beaulieu"
-date: "24 April 2020"
+date: "08 May 2020"
 output: html_document
 ---
 
@@ -32,17 +32,16 @@ source("edi-utilities.R")
 libs <- c("tidyverse", "readxl", "lubridate", "devtools", "EMLassemblyline", "EML", "maps", "xml2")
 # load libraries
 lapply(libs, require, character.only = TRUE)
+
+# # install emlassemblyline fix_31b to try the semantic annotation
+# remotes::install_github("EDIorg/EMLassemblyline", ref = "fix_31b")
+# library(EMLassemblyline)
+
 ```
 
 ## Load data tables level1b and level2 revise column headers and add columns here for OBIS
 
-This is not necessary for test csv files
-
 ```{r}
-
-# # note test csv files already have the columns and column headers for EDI product
-# level1b <- read_csv("project_folder/level1b_test.csv")
-# level2 <- read_csv("project_folder/level2_test.csv")
 
 # level1b <- read_csv("https://github.com/klqi/EDI-NES-LTER-2019/raw/f040f31c290ff40baf9a48c9ce2dd57b46336900/auto_join/level_1b_manual.csv")  # does not account for 7 ROIs with features zero
 level1b <- read_csv("https://github.com/klqi/EDI-NES-LTER-2019/raw/d61d55de36137e94bfafa94c080849f4554e5df6/auto_join/level_1b_manual.csv") # accounts for 7 ROIs with features zero
@@ -75,6 +74,9 @@ level2 <- read_csv("https://github.com/klqi/EDI-NES-LTER-2019/raw/d61d55de36137e
 
 # make sure sum of level2 abundance equals the number of ROIs in level1b
 sum(level2$Abundance)
+# make sure sum of level2 biovolume equals the sum of level1b biovolume
+sum(level2$Biovolume)
+sum(level1b$Biovolume, na.rm=TRUE) 
 # view summary stats
 summary(level2)
 
@@ -110,24 +112,25 @@ level1bEDI$basisOfRecord = "HumanObservation"
 # strip level1b extraneous column "X1"
 level1bEDI <- select(level1bEDI, -X1)
 
-# add column concentrationFlag to level2 since IFCB triggered only on fluorescence
+# add column concentrationFlag to level2 esp. since IFCB triggered only on fluorescence
 level2$concentrationFlag = 1  # initiate concentrationFlag with 1 likely valid
 
 # for the following data_provider_category_HumanObservation replace concentrationFlag with zero may be invalid
-# 20200414_classify_classlabel_matched_sorted.xls
-# "amoeba", "ciliate", "detritus", "detritus clear", "Dinophyceae", "Eutintinnus", "Favella", "fecal pellet", "flagellate", "foraminifera", "Gyrodinium", "Helicostomella subulata", "Nauplii", "Polykrikos", "Radiozoa", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis", "zooplankton", "mix", "Parvicorbicula socialis", "cryptophyta", "Leptocylindrus mediterraneus"
+# 20200414_classify_classlabel_matched_sorted_concentrationFlag.xls
 # the following as reported by Brownlee et al. (2016) https://doi.org/10.3354/meps11687
-# "ciliate", "Eutintinnus", "Gyrodinium", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis"
+# "ciliate", "Eutintinnus", "Gyrodinium", "Tintinnida", "Tintinnidium mucicola", "Favella", "Oxyrrhis", "Protoperidinium"
 # the following because heterotrophs or the group includes heterotrophs
 # "amoeba", "Dinophyceae", "flagellate", "foraminifera", "Nauplii", "Parvicorbicula socialis", "Radiozoa", "zooplankton"
 # the following because not organisms
 # "bead", detritus", "detritus clear", "fecal pellet", "other"
-# the following empirical Emily Peacock pers. comm.
-# "cryptophyta" EN608, "Favella", "Leptocylindrus mediterraneus", "Helicostomella subulata", "mix", "Polykrikos"
+# the following empirical
+# "cryptophyta" undercounted on EN608, "Leptocylindrus mediterraneus", "Helicostomella subulata",  "Polykrikos"
+# the following at smallest or largest end of size range
+# "mix", "Coscinodiscus"
 
-undersampledTriggerFluor <- list("amoeba", "bead", "ciliate", "cryptophyta", "detritus", "detritus clear", "Dinophyceae", "Eutintinnus", "Favella", "fecal pellet", "flagellate", "foraminifera", "Gyrodinium", "Helicostomella subulata", "Leptocylindrus mediterraneus", "mix","Nauplii", "other", "Parvicorbicula socialis", "Polykrikos", "Radiozoa", "Tintinnida", "Tintinnidium mucicola", "Tintinnopsis", "zooplankton")
+undersampled <- list("amoeba", "bead", "ciliate", "Coscinodiscus", "cryptophyta", "detritus", "detritus clear", "Dinophyceae", "Eutintinnus", "Favella", "fecal pellet", "flagellate", "foraminifera", "Gyrodinium", "Helicostomella subulata", "Leptocylindrus mediterraneus", "mix","Nauplii", "other", "Oxyrrhis", "Parvicorbicula socialis", "Polykrikos", "Protoperidinium", "Radiozoa", "Tintinnida", "Tintinnidium mucicola", "zooplankton")
 
-for (i in undersampledTriggerFluor) {
+for (i in undersampled) {
 level2 %>% mutate(concentrationFlag = replace(concentrationFlag, data_provider_category_HumanObservation == i, 0)) -> level2
 }
 
@@ -281,3 +284,21 @@ project_insert(edi_pkg = pkg_id,
 ```
 
 ## Add semantic annotations to EML 2.2
+
+```{r}
+
+# install emlassemblyline fix_31b to try the semantic annotation
+# I already prepared an annotations.txt file for the keyword image
+
+remotes::install_github("EDIorg/EMLassemblyline", ref = "fix_31b")
+library(EMLassemblyline)
+
+# annotate_eml(annotations = "project_folder/annotations.txt", eml.in = "project_folder/knb-lter-nes.9.1.xml", eml.out = NULL) # this returned Error: Can't subset columns that don't exist. so I contacted developer
+
+# REMEMBER TO REINSTALL THE REGULAR EMLASSEMBLYLINE AFTERWARDS BECAUSE CAN'T GENERATE EML YET FROM SCRATCH WITH THIS BRANCH
+# # Install and load EMLassemblyline
+# remotes::install_github("EDIorg/EMLassemblyline")
+# library(EMLassemblyline)
+
+```
+

@@ -3,5 +3,7 @@ Heidi	M	Sosik	Northeast U.S. Shelf LTER	hsosik@whoi.edu	0000-0002-4591-2842	crea
 Emily		Peacock	Northeast U.S. Shelf LTER	epeacock@whoi.edu		creator	Northeast U.S. Shelf LTER	NSF	OCE-1655686
 Miraflor		Santos	Northeast U.S. Shelf LTER	miras@mit.edu		creator	Northeast U.S. Shelf LTER	NSF	OCE-1655686
 NES-LTER Information Manager			Northeast U.S. Shelf LTER	lter-nes-info@whoi.edu		contact	Northeast U.S. Shelf LTER	NSF	OCE-1655686
+E. Taylor		Crockford	Northeast U.S. Shelf LTER	ecrockford@whoi.edu		technician	Northeast U.S. Shelf LTER	NSF	OCE-1655686
+Joe		Futrelle	Northeast U.S. Shelf LTER	jfutrelle@whoi.edu		softwareDeveloper	Northeast U.S. Shelf LTER	NSF	OCE-1655686
 Katherine		Qi	Northeast U.S. Shelf LTER	klqi@ucsd.edu		metadataProvider	Northeast U.S. Shelf LTER	NSF	OCE-1655686
 Stace	E	Beaulieu	Northeast U.S. Shelf LTER	sbeaulieu@whoi.edu	0000-0002-2609-5453	metadataProvider	Northeast U.S. Shelf LTER	NSF	OCE-1655686

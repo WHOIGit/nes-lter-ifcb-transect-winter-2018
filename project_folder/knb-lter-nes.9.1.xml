@@ -40,6 +40,24 @@
     </creator>
     <associatedParty>
       <individualName>
+        <givenName>E. Taylor</givenName>
+        <surName>Crockford</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>ecrockford@whoi.edu</electronicMailAddress>
+      <role>Technician</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Joe</givenName>
+        <surName>Futrelle</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>jfutrelle@whoi.edu</electronicMailAddress>
+      <role>Softwaredeveloper</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
         <givenName>Katherine</givenName>
         <surName>Qi</surName>
       </individualName>
@@ -58,7 +76,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-04-24</pubDate>
+    <pubDate>2020-05-08</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
@@ -104,11 +122,12 @@
     <additionalInfo>
       <para>
   We would like to thank the Ocean Carbon and Biogeochemistry
-  Phytoplankton Taxonomy Working Group, Abby Benson at OBIS-USA and the
-  Standardizing Marine Biological Data Working Group, the LTER
-  Non-Tabular Data Working Group, and the Environmental Data Initiative
-  Summer 2019 Fellowship Program. We acknowledge additional funding from
-  NSF CyberSEES #1539256.
+  Phytoplankton Taxonomy Working Group, Emily Brownlee at St. Mary’s
+  College of Maryland, Abby Benson at OBIS-USA and the Standardizing
+  Marine Biological Data Working Group, the LTER Non-Tabular Data
+  Working Group, and the Environmental Data Initiative Summer 2019
+  Fellowship Program. We acknowledge additional funding from NSF
+  CyberSEES #1539256.
 </para>
     </additionalInfo>
     <intellectualRights>
@@ -203,7 +222,7 @@
             <para>
     All underway samples from this cruise may be explored in the online
     IFCB dashboard at:
-    https://ifcb-data.whoi.edu/timeline?bin=D20180205T132051_IFCB102&amp;dataset=NESLTER_transect&amp;tags=underway&amp;cruise=EN608.
+    https://ifcb-data.whoi.edu/timeline?dataset=NESLTER_transect&amp;cruise=EN608&amp;sample_type=underway.
     Locations were determined for the IFCB samples based on matching the
     sample start time rounded down to the nearest minute to the ship
     position. We provide data for the subset of samples collected within
@@ -215,9 +234,13 @@
           <section>
             <title>Further subsetting samples for quality assurance</title>
             <para>
-    We excluded samples taken at the beginning of the cruise with
-    IFCB109 because an estimated 5-10% of cells were outside the field
-    of view of its camera (there was evidence from the data that
+    Functionality of the IFCB instruments is confirmed before the cruise
+    departs by running polystyrene beads and a Dunaliella phytoplankton
+    culture to confirm sensitivity and a dock water sample to confirm
+    good flow. Polystyrene beads are also run during and after the
+    cruise. We excluded samples taken at the beginning of the cruise
+    with IFCB109 because an estimated 5-10% of cells were outside the
+    field of view of its camera (there was evidence from the data that
     degassing was occurring due to the extreme temperature difference
     between the water sampled and the internal temperature of the IFCB).
     For the second IFCB (IFCB102) we confirmed there were no samples
@@ -314,11 +337,15 @@
     the abundance or biovolume by the volume imaged. Abundance does not
     match 1:1 to cell counts because chain- or colony-forming organisms
     may be imaged as a single ROI. Note concentrations will be
-    underestimates for those taxa that do not always trigger
-    fluorescence (e.g., heterotrophs). We provide a concentration flag
-    for categories undersampled when triggering only on chlorophyll
-    fluorescence as reported by Brownlee et al. (2016)
-    https://doi.org/10.3354/meps11687.
+    underestimates for taxa that do not always trigger fluorescence. We
+    provide a concentration flag for heterotrophs determined empirically
+    as undersampled when triggering only on chlorophyll fluorescence
+    (Brownlee et al., 2016, https://doi.org/10.3354/meps11687), a few
+    other heterotrophs (e.g., foraminifera), and one diatom
+    (Leptocylindrus mediterraneus). We also provide a concentration flag
+    for one category at the smallest (mix) and one at largest
+    (Coscinodiscus) end of the size range imaged and for one category
+    (cryptophyta) difficult to discriminate morphologically.
   </para>
           </section>
           <section>
@@ -818,7 +845,7 @@
       <physical>
         <objectName>level2_edi.csv</objectName>
         <size unit="bytes">372353</size>
-        <authentication method="MD5">c39e25cded2683fa6c898ce2b74e69ea</authentication>
+        <authentication method="MD5">e526a6e8714888e7c753827456f87a4a</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
