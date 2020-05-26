@@ -11,7 +11,7 @@
     </allow>
   </access>
   <dataset>
-    <title>Abundance and biovolume of taxonomically-resolved phytoplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</title>
+    <title>Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</title>
     <creator>
       <individualName>
         <givenName>Heidi</givenName>
@@ -37,6 +37,7 @@
       </individualName>
       <organizationName>Northeast U.S. Shelf LTER</organizationName>
       <electronicMailAddress>miras@mit.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-6839-2579</userId>
     </creator>
     <associatedParty>
       <individualName>
@@ -76,28 +77,29 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
       <role>Metadataprovider</role>
     </associatedParty>
-    <pubDate>2020-05-08</pubDate>
+    <pubDate>2020-05-26</pubDate>
     <abstract>
       <para>
   These data represent the abundance and biovolume of
-  taxonomically-resolved phytoplankton imaged continuously underway
-  along the NES-LTER Transect during cruise EN608 in winter 2018. Images
-  were obtained with an Imaging FlowCytobot (IFCB) sampling at
-  approximately 20-min intervals from seawater supplied from 5 meters
-  water depth. Data are provided for the subset of images during the
-  cruise that were on the north-south transect along longitude 70 53’ W.
-  Sizes for individuals were determined automatically by image
-  processing, while identifications to morphological categories were
-  done manually. Data are provided by taxon with names and
-  machine-readable identifiers matched to the lowest taxonomic level to
-  the World Register of Marine Species. Two data tables are provided:
-  the level 1b for each occurrence and the level 2 that summarizes the
-  occurrences by taxon per sample. Individual and sample identifiers are
-  linked to images served by an external repository. This data package
-  provides 144,281 machine-readable occurrences for incorporation into
-  the Ocean Biogeographic Information System and the Global Ocean
-  Observing System Essential Ocean Variable Phytoplankton biomass and
-  diversity.
+  taxonomically-resolved phytoplankton and microzooplankton imaged
+  continuously underway along the NES-LTER Transect during cruise EN608
+  in winter 2018. Images were obtained with an Imaging FlowCytobot
+  (IFCB) sampling at approximately 20-min intervals from seawater
+  supplied from 5 meters water depth. Data are provided for the subset
+  of images during the cruise that were on the north-south transect
+  along longitude 70 53’ W. Sizes for individuals were determined
+  automatically by image processing, while identifications to
+  morphological categories were done manually. Data are provided by
+  taxon with names and machine-readable identifiers matched to the
+  lowest taxonomic level to the World Register of Marine Species. Two
+  data tables are provided: the level 1b for each occurrence and the
+  level 2 that summarizes the occurrences by taxon per sample.
+  Individual and sample identifiers are linked to images served by an
+  external repository. This data package provides 144,281
+  machine-readable occurrences for incorporation into the Ocean
+  Biogeographic Information System and the Global Ocean Observing System
+  Essential Ocean Variables Phytoplankton biomass and diversity and the
+  microplankton size class of Zooplankton biomass and diversity.
 </para>
     </abstract>
     <keywordSet>
@@ -117,17 +119,22 @@
     </keywordSet>
     <keywordSet>
       <keyword>image</keyword>
-      <keywordThesaurus>Open Biological and Biomedical Ontology (OBO)</keywordThesaurus>
+      <keywordThesaurus>OBO Open Biological and Biomedical Ontology</keywordThesaurus>
     </keywordSet>
     <additionalInfo>
       <para>
   We would like to thank the Ocean Carbon and Biogeochemistry
   Phytoplankton Taxonomy Working Group, Emily Brownlee at St. Mary’s
-  College of Maryland, Abby Benson at OBIS-USA and the Standardizing
-  Marine Biological Data Working Group, the LTER Non-Tabular Data
-  Working Group, and the Environmental Data Initiative Summer 2019
-  Fellowship Program. We acknowledge additional funding from NSF
-  CyberSEES #1539256.
+  College of Maryland, Abby Benson at OBIS-USA and the IOOS
+  Standardizing Marine Biological Data Working Group, the LTER
+  Non-Tabular Data Working Group, and the Environmental Data Initiative
+  Summer 2019 Fellowship Program. We acknowledge additional funding from
+  NSF CyberSEES #1539256. Note for the individual-level Level 1b data
+  file, recommendations for the use of Darwin Core basisOfRecord may
+  change as they are under consideration in an OBIS Network
+  collaboration with an EU project to describe best practices and
+  develop standardized protocols for data management of biological
+  imagery data.
 </para>
     </additionalInfo>
     <intellectualRights>
@@ -210,10 +217,11 @@
   imaged</title>
             <para>
     Images in this dataset were triggered by chlorophyll fluorescence,
-    thus mainly representing phytoplankton. IFCB trigger thresholds were
-    set to image as wide a size range as possible, i.e., 5 to 150
-    micrometers, with quantitative observations in a more narrow range.
-    Images have resolution 2.77 pixels per micrometer.
+    thus mainly representing phytoplankton but include herbivorous
+    microzooplankton. IFCB trigger thresholds were set to image as wide
+    a size range as possible, i.e., 5 to 150 micrometers, with
+    quantitative observations in a more narrow range. Images have
+    resolution 2.77 pixels per micrometer.
   </para>
           </section>
           <section>
@@ -235,22 +243,22 @@
             <title>Further subsetting samples for quality assurance</title>
             <para>
     Functionality of the IFCB instruments is confirmed before the cruise
-    departs by running polystyrene beads and a Dunaliella phytoplankton
-    culture to confirm sensitivity and a dock water sample to confirm
-    good flow. Polystyrene beads are also run during and after the
-    cruise. We excluded samples taken at the beginning of the cruise
-    with IFCB109 because an estimated 5-10% of cells were outside the
-    field of view of its camera (there was evidence from the data that
-    degassing was occurring due to the extreme temperature difference
-    between the water sampled and the internal temperature of the IFCB).
-    For the second IFCB (IFCB102) we confirmed there were no samples
-    tagged bad_flow and checked the region of interest (ROI) x y plot in
-    the IFCB dashboard at several time points. During the beginning of
-    the cruise, IFCB102 was being used to check discrete samples from
-    the underway science seawater, as a backup to the IFCB109.
-    Ultimately, we also included 4 IFCB102 samples tagged underway and
-    discrete to account for some of the excluded IFCB109 samples early
-    in the cruise.
+    departs by running polystyrene bead standards and a Dunaliella
+    phytoplankton culture to confirm sensitivity and a dock water sample
+    to confirm good flow. Polystyrene beads are also run during and
+    after the cruise. We excluded samples taken at the beginning of the
+    cruise with IFCB109 because an estimated 5-10% of cells were outside
+    the field of view of its camera (there was evidence from the data
+    that degassing was occurring due to the extreme temperature
+    difference between the water sampled and the internal temperature of
+    the IFCB). For the second IFCB (IFCB102) we confirmed there were no
+    samples tagged bad_flow and checked the region of interest (ROI) x y
+    plot in the IFCB dashboard at several time points. During the
+    beginning of the cruise, IFCB102 was being used to check discrete
+    samples from the underway science seawater, as a backup to the
+    IFCB109. Ultimately, we also included 4 IFCB102 samples tagged
+    underway and discrete to account for some of the excluded IFCB109
+    samples early in the cruise.
   </para>
           </section>
           <section>
@@ -291,15 +299,16 @@
     category of diatoms. Some morphological categories could not be
     matched to WoRMS, but were matched to Eukaryota in AlgaeBase. We
     also resolved taxonomic names and identifiers for the full list of
-    categories in the annotation database, to be able (in a future
-    version of this dataset) to provide occurrenceStatus absent for
-    those categories not observed in samples from this cruise. For the
-    data product from this cruise, we also provide a higher
-    classification group for each organism - diatoms, dinoflagellates,
-    haptophytes, or other than those 3 - to enable summarization for
-    functional groups. Several categories are not organisms thus
-    taxonomic names are NotApplicable (e.g., bubble, detritus). Code and
-    classification lookup tables are available in GitHub:
+    categories in the annotation database, to be able to indicate
+    absence for those categories not observed in samples from this
+    cruise (i.e., occurrenceStatus absent in a future version of this
+    dataset). For the data product from this cruise, we also provide a
+    higher classification group for each organism - diatoms,
+    dinoflagellates, haptophytes, or other than those 3 - to enable
+    summarization for functional groups. Several categories are not
+    organisms thus taxonomic names are NotApplicable (e.g., bubble,
+    detritus). Code and classification lookup tables are available in
+    GitHub:
     https://github.com/klqi/EDI-NES-LTER-2019/tree/master/namespace_validation.
   </para>
           </section>
@@ -312,7 +321,7 @@
     available in GitHub:
     https://github.com/klqi/EDI-NES-LTER-2019/tree/master/auto_join. The
     individual(ROI)-level data table (Level 1b) is formatted in
-    accordance with recommendations from the Ocean Carbon &amp;
+    accordance with recommendations from the Ocean Carbon and
     Biogeochemistry Phytoplankton Taxonomy Working Group.
   </para>
           </section>
@@ -320,9 +329,8 @@
             <title>Determining volume imaged per sample</title>
             <para>
     The IFCB draws in 5 ml per sample but does not image the entire
-    volume. The volume imaged per sample was determined using code
-    available in GitHub:
-    https://github.com/klqi/EDI-NES-LTER-2019/tree/master/volume.
+    volume. The volume imaged per sample is provided in the online IFCB
+    dashboard under Basic Info as Volume Analyzed.
   </para>
           </section>
           <section>
@@ -335,17 +343,18 @@
     https://github.com/klqi/EDI-NES-LTER-2019/blob/master/plot1.
     Concentrations per taxon per sample may be calculated by dividing
     the abundance or biovolume by the volume imaged. Abundance does not
-    match 1:1 to cell counts because chain- or colony-forming organisms
-    may be imaged as a single ROI. Note concentrations will be
-    underestimates for taxa that do not always trigger fluorescence. We
-    provide a concentration flag for heterotrophs determined empirically
-    as undersampled when triggering only on chlorophyll fluorescence
-    (Brownlee et al., 2016, https://doi.org/10.3354/meps11687), a few
-    other heterotrophs (e.g., foraminifera), and one diatom
-    (Leptocylindrus mediterraneus). We also provide a concentration flag
-    for one category at the smallest (mix) and one at largest
-    (Coscinodiscus) end of the size range imaged and for one category
-    (cryptophyta) difficult to discriminate morphologically.
+    correspond necessarily to cell counts because chain- or
+    colony-forming organisms may be imaged as a single ROI. Note
+    concentrations will be underestimates for taxa that do not always
+    trigger fluorescence. We provide a concentration flag for
+    heterotrophs determined empirically as undersampled when triggering
+    only on chlorophyll fluorescence (Brownlee et al., 2016,
+    https://doi.org/10.3354/meps11687), a few other heterotrophs (e.g.,
+    foraminifera), and one diatom (Leptocylindrus mediterraneus). We
+    also provide a concentration flag for one category at the smallest
+    (mix) and one at largest (Coscinodiscus) end of the size range
+    imaged and for one category (cryptophyta) difficult to discriminate
+    morphologically.
   </para>
           </section>
           <section>
@@ -607,7 +616,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -630,7 +639,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -653,7 +662,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -676,7 +685,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>

@@ -77,7 +77,7 @@ sum(level2$Abundance)
 # make sure sum of level2 biovolume equals the sum of level1b biovolume
 sum(level2$Biovolume)
 sum(level1b$Biovolume, na.rm=TRUE) 
-# view summary stats
+# view summary stats, confirm range volume_imaged
 summary(level2)
 
 # rename level2 columns to eventDate, decimalLatitude, decimalLongitude, higherClassification_group
@@ -267,7 +267,7 @@ coverage <- data_coverage(dates = date_col, lat = lat_col, lon = lon_col)
 
 # Make EML
 make_eml(path = paste0(dir, project_folder),
-         dataset.title = "Abundance and biovolume of taxonomically-resolved phytoplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018",
+         dataset.title = "Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018",
          data.table = paste0(edi_data, ".csv"),
          data.table.description = file_descriptions,
          temporal.coverage = c(coverage$startdate, coverage$enddate),

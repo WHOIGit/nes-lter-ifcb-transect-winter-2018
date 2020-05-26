@@ -8,4 +8,4 @@ transects	LTER Controlled Vocabulary
 winter	LTER Controlled Vocabulary
 marine	LTER Controlled Vocabulary
 oceanography	LTER Controlled Vocabulary
-image	Open Biological and Biomedical Ontology (OBO)
+image	OBO Open Biological and Biomedical Ontology
