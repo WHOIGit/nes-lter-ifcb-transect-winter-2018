@@ -293,7 +293,7 @@ project_insert(edi_pkg = pkg_id,
 remotes::install_github("EDIorg/EMLassemblyline", ref = "fix_31b")
 library(EMLassemblyline)
 
-# annotate_eml(annotations = "project_folder/annotations.txt", eml.in = "project_folder/knb-lter-nes.9.1.xml", eml.out = NULL) # this returned Error: Can't subset columns that don't exist. so I contacted developer
+annotate_eml(annotations = "project_folder/annotations.txt", eml.in = "project_folder/knb-lter-nes.9.1.xml", eml.out = "knb-lter-nes.9.1.xml")
 
 # REMEMBER TO REINSTALL THE REGULAR EMLASSEMBLYLINE AFTERWARDS BECAUSE CAN'T GENERATE EML YET FROM SCRATCH WITH THIS BRANCH
 # # Install and load EMLassemblyline

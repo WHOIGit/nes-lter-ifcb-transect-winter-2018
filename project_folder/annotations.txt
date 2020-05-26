@@ -1,2 +1,2 @@
-element	predicate_label	predicate_uri	object_label	object_uri
-/dataset	is about	http://purl.obolibrary.org/obo/IAO_0000136	image	http://purl.obolibrary.org/obo/IAO_0000101
+id	element	context	subject	predicate_label	predicate_uri	object_label	object_uri
+/dataset	/dataset	eml	dataset	is about	http://purl.obolibrary.org/obo/IAO_0000136	image	http://purl.obolibrary.org/obo/IAO_0000101
